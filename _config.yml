@@ -1,0 +1,55 @@
+title: Agora Dau
+url: https://agoradau.fr
+baseurl: ""
+lang: fr
+markdown: kramdown
+kramdown:
+  input: GFM
+  smart_quotes: [lsquo, rsquo, ldquo, rdquo]
+collections:
+  analyses:
+    output: true
+    permalink: /analyses/:name/
+  podcasts:
+    output: false
+  actualites:
+    output: true
+    permalink: /actualites/:name/
+defaults:
+  - scope: {path: "", type: analyses}
+    values: {layout: analyse, root: "../../", section: journal}
+  - scope: {path: "", type: actualites}
+    values: {layout: analyse, root: "../../", section: journal}
+include: [_pages]
+exclude:
+  - index.html
+  - 404.html
+  - analyses
+  - actualites
+  - journal
+  - ecouter
+  - association
+  - charte
+  - newsletter
+  - publier
+  - mentions-legales
+  - app/index.html
+  - sitemap.xml
+  - node_modules
+  - package.json
+  - package-lock.json
+  - Gemfile
+  - Gemfile.lock
+  - scripts
+  - research
+  - qa
+  - README.md
+  - AGENTS.md
+  - CLAUDE.md
+  - requests.md
+  - design-plan.md
+  - design-tokens.json
+  - telaventis-manifest.json
+  - CREDITS.md
+  - GUIDE-PUBLICATION.md
+  - AI-INSTRUCTIONS.md

@@ -1,0 +1,7 @@
+{
+  "name": "agora-dau",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {"build": "node scripts/build.mjs", "check": "node scripts/build.mjs --check", "waveform": "node scripts/waveform.mjs"},
+  "devDependencies": {"liquidjs":"10.25.2","markdown-it":"14.1.0","yaml":"2.8.3"}
+}

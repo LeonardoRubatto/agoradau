@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copie portable générée par npm run build. -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://agoradau.fr/app/</loc></url>
+  <url><loc>https://agoradau.fr/association/</loc></url>
+  <url><loc>https://agoradau.fr/ecouter/</loc></url>
+  <url><loc>https://agoradau.fr/charte/</loc></url>
+  <url><loc>https://agoradau.fr/</loc></url>
+  <url><loc>https://agoradau.fr/journal/</loc></url>
+  <url><loc>https://agoradau.fr/mentions-legales/</loc></url>
+  <url><loc>https://agoradau.fr/newsletter/</loc></url>
+  <url><loc>https://agoradau.fr/publier/</loc></url>
+
+
+  <url><loc>https://agoradau.fr/analyses/colonialisme-vert/</loc><lastmod>2026-07-01</lastmod></url>
+  <url><loc>https://agoradau.fr/analyses/ils-ont-vole-la-nuit/</loc><lastmod>2026-06-19</lastmod></url>
+  <url><loc>https://agoradau.fr/analyses/la-gradiva/</loc><lastmod>2026-11-15</lastmod></url>
+  <url><loc>https://agoradau.fr/analyses/masculinisme/</loc><lastmod>2026-08-01</lastmod></url>
+  <url><loc>https://agoradau.fr/analyses/omnipresence-trump/</loc><lastmod>2026-11-23</lastmod></url>
+
+</urlset>

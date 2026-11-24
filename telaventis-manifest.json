@@ -1,0 +1,43 @@
+{
+  "schema": 1,
+  "createdAt": "2026-11-24T12:29:57.217Z",
+  "state": "prepared",
+  "items": [
+    {
+      "id": "architecture/csv-json-content-pipeline",
+      "version": "380bf255273da234e3745edb6deb9230790277a9a434106c75cdf6b014dd67b5",
+      "license": "Own work — private repo of a personal/associative project, no formal OSS license. Reuse is self-attribution across own projects; do not redistribute the BDE-specific content (event/sponsor data, copy, images) outside that project.",
+      "source": null
+    },
+    {
+      "id": "gallery-carousel/shapes-slideshow",
+      "version": "a8b37c304d4ff7ab48c071bb07aa7b68cad333648b9cd83f63b8f69fe8ca8290",
+      "license": "MIT",
+      "source": "http://tympanus.net/Development/ShapesSlideshow/"
+    },
+    {
+      "id": "navigation/hover-grid",
+      "version": "fd8c2a48f98385c01159a63dd2749d612a71d74782dcb6b56cac725aaea21884",
+      "license": "MIT",
+      "source": "http://tympanus.net/Development/HoverGrid/"
+    },
+    {
+      "id": "navigation/scroll-index",
+      "version": "a1bdfe0f97d16946b81ff207516d59170e66ca09ff25c74e142640f4173a9a73",
+      "license": "MIT",
+      "source": "https://kokonutui.com/r/scroll-index.json"
+    },
+    {
+      "id": "primitives/button-hover-styles",
+      "version": "f7a2214ae3f9ef269fe3375014e0f95a38a820cb94d781220242d06859e9e10d",
+      "license": "MIT",
+      "source": null
+    },
+    {
+      "id": "scroll/sticky-sections",
+      "version": "3a7195239d05e5cf1399008b224a99d6e410f709892750f2092025c2ce44f364",
+      "license": "MIT",
+      "source": "https://tympanus.net/Development/StickySections/"
+    }
+  ]
+}
