@@ -15,7 +15,7 @@
     const action = one("[data-stage-action]", stage);
     const actionText = one("[data-stage-action-text]", action);
     const rotation = one("[data-stage-rotation]", stage);
-    const rotationText = one("[data-stage-rotation-text]", rotation);
+    const compactStage = matchMedia("(max-width: 760px)");
     let current = figures.find((figure) => !figure.hidden);
     let wipe;
     let autoplay = !reduced.matches;
@@ -46,7 +46,10 @@
         previous.hidden = true;
         return;
       }
-      wipe = next.animate([
+      wipe = next.animate(compactStage.matches ? [
+        { clipPath: "inset(0 100% 0 0)" },
+        { clipPath: "inset(0)" }
+      ] : [
         { clipPath: "ellipse(0% 0% at 69% 50%)" },
         { clipPath: "ellipse(115% 110% at 69% 50%)" }
       ], { duration: 560, easing });
@@ -56,7 +59,6 @@
     function schedule() {
       clearTimeout(clock);
       rotation.dataset.rotating = String(autoplay);
-      rotationText.textContent = autoplay ? "Pause images" : "Relancer les images";
       rotation.setAttribute("aria-label", autoplay ? "Mettre les images en pause" : "Relancer le défilement des images");
       caption.setAttribute("aria-live", autoplay ? "off" : "polite");
       if (!autoplay || hovered || !onScreen || document.hidden) return;

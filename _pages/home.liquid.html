@@ -10,7 +10,6 @@ body_class: home
 {% assign root = page.root %}
 {% assign feed = site.analyses | concat: site.actualites | sort: 'date' | reverse %}
 {% assign feature = feed | where: 'url', site.data.site.featured | first | default: feed.first %}
-{% assign stage_cover = feature.cover | default: '/media/agoradio.jpg' %}
 {% assign episode = site.podcasts | sort: 'date' | last %}
 <main id="contenu">
   <section class="on-air" id="hero" aria-labelledby="intro-titre" data-stage>
@@ -23,20 +22,20 @@ body_class: home
       <div class="stage-media">
         <div class="stage-oval">
           <figure class="stage-shot stage-shot--studio" data-stage-scene="ecouter">
-            {% include picture.html path="/assets/photos/podcast-studio-1.jpg" alt="Une invitée et une membre de l’équipe enregistrent Ago’radio autour d’une table de studio" sizes="(max-width: 760px) 92vw, (max-width: 1200px) 56vw, 730px" eager=true %}
+            {% include picture.html path="/assets/photos/podcast-selfie.jpg" alt="Trois personnes sourient derrière les micros d’Ago’radio" sizes="(max-width: 760px) 100vw, (max-width: 1200px) 56vw, 730px" eager=true %}
           </figure>
           <figure class="stage-shot stage-shot--journal" data-stage-scene="lire" hidden>
-            {% include picture.html path=stage_cover alt=feature.cover_alt sizes="(max-width: 760px) 92vw, 640px" %}
+            {% include picture.html path="/analyse-nuit-filature-wright.jpg" alt="Un nuage éclairé par la lune au-dessus d’une filature, dans une peinture de Joseph Wright of Derby" sizes="(max-width: 760px) 100vw, 730px" %}
           </figure>
           <figure class="stage-shot stage-shot--asso" data-stage-scene="participer" hidden>
-            {% include picture.html path="/assets/photos/bureau-prenoms.jpg" alt="Le bureau d’Agora Dau réuni devant un bâtiment parisien de nuit" sizes="(max-width: 760px) 92vw, 730px" %}
+            {% include picture.html path="/assets/photos/sans-culottes.jpg" alt="Des membres d’Agora Dau devant la devanture du bar Les Sans-Culottes" sizes="(max-width: 760px) 100vw, 730px" %}
           </figure>
         </div>
         <div class="stage-orbit" aria-hidden="true"></div>
-        <div class="stage-caption">
-          <p data-stage-caption>Au studio d’Ago’radio</p>
-          <button type="button" data-stage-rotation hidden aria-label="Mettre les images en pause"><span data-stage-rotation-text>Pause images</span></button>
-        </div>
+      </div>
+      <div class="stage-caption">
+        <p data-stage-caption>Derrière les micros d’Ago’radio</p>
+        <button type="button" data-stage-rotation hidden aria-label="Mettre les images en pause"><i aria-hidden="true"></i></button>
       </div>
     </div>
     <div class="stage-console">
@@ -45,9 +44,9 @@ body_class: home
       </nav>
       <div class="wrap stage-controls" data-stage-controls hidden>
         <div class="stage-keys" role="group" aria-label="Aperçus du média">
-          <button type="button" data-stage-key="lire" aria-pressed="false" data-caption="{{ feature.title | default: 'Le journal' | escape }}{% if feature.partner %} · Agora Dau × ACD{% endif %}" data-href="journal/index.html" data-link="Ouvrir le journal"><strong>Lire</strong><span>Le journal</span></button>
-          <button type="button" data-stage-key="ecouter" aria-pressed="true" data-caption="Au studio d’Ago’radio" data-href="{% if episode %}#podcast{% else %}ecouter/index.html{% endif %}" data-link="Écouter l’épisode"><strong>Écouter</strong><span>Ago’radio</span></button>
-          <button type="button" data-stage-key="participer" aria-pressed="false" data-caption="Le bureau d’Agora Dau" data-href="association/index.html#rejoindre" data-link="Rejoindre l’asso"><strong>Participer</strong><span>L’association</span></button>
+          <button type="button" data-stage-key="lire" aria-pressed="false" data-caption="Dans le journal · Ils ont volé la nuit" data-href="journal/index.html" data-link="Ouvrir le journal">Le tableau</button>
+          <button type="button" data-stage-key="ecouter" aria-pressed="true" data-caption="Derrière les micros d’Ago’radio" data-href="{% if episode %}#podcast{% else %}ecouter/index.html{% endif %}" data-link="Écouter l’épisode">Le studio</button>
+          <button type="button" data-stage-key="participer" aria-pressed="false" data-caption="L’équipe devant Les Sans-Culottes" data-href="association/index.html#rejoindre" data-link="Rejoindre l’asso">L’équipe</button>
         </div>
         <a class="stage-action" data-stage-action href="{% if episode %}#podcast{% else %}ecouter/index.html{% endif %}"><span data-stage-action-text>Écouter l’épisode</span><i aria-hidden="true"></i></a>
       </div>
@@ -118,7 +117,7 @@ body_class: home
         {% include picture.html path="/assets/photos/groupe-bar.jpg" alt="Des membres d’Agora Dau réunis sous les lumières rouges d’un bar" sizes="(max-width: 760px) 92vw, 660px" %}
       </div>
       <div class="life-copy">
-        <h2 id="asso-titre">Qui tient<br>le micro&nbsp;?</h2>
+        <h2 id="asso-titre">Qui tient <br>le micro&nbsp;?</h2>
         <p>{{ site.data.texte-source.mission[1] | escape }}</p>
         <a class="ink-button" id="bureau" href="association/index.html#bureau"><span>Rencontrer l’équipe</span></a>
         <a class="simple-link" href="charte/index.html">La charte anti-IA</a>
@@ -128,7 +127,21 @@ body_class: home
 
   <section class="wrap section home-programme" id="formats" aria-labelledby="home-formats-titre">
     <h2 id="home-formats-titre">Au programme</h2>
-    {% include formats.html %}
+    <ul class="format-index" role="list">
+      {% for format in site.data.texte-source.formats %}
+      <li class="format-entry">
+        <h3>{{ format.name | escape }}</h3>
+        <div class="format-note">
+          <p>{{ format.desc | escape }}</p>
+          {% if format.url %}
+          <a class="format-link" href="{{ root }}{{ format.url }}">{% if format.kind == 'Audio' %}Écouter Ago’radio{% else %}Lire le journal{% endif %}</a>
+          {% else %}
+          <span class="format-status">{{ format.status | escape }}</span>
+          {% endif %}
+        </div>
+      </li>
+      {% endfor %}
+    </ul>
   </section>
 
   <section class="home-invitations" id="participer" aria-labelledby="participation-titre">
