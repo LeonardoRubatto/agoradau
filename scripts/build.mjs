@@ -141,7 +141,7 @@ async function audioSizeOutput() {
     }
     sizes[name] = size;
   }
-  return ["_data/audio-sizes.json", JSON.stringify(sizes, null, 2) + "\n"];
+  return ["functions/_lib/audio-sizes.js", "export default " + JSON.stringify(sizes, null, 2) + ";\n"];
 }
 
 async function renderLayout(name, content, scope) {

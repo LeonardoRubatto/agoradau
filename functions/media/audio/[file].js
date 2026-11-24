@@ -1,4 +1,4 @@
-import audioSizes from "../../../_data/audio-sizes.json" with { type: "json" };
+import audioSizes from "../../_lib/audio-sizes.js";
 
 async function copyRange(body, writable, start, end) {
   const reader = body.getReader();

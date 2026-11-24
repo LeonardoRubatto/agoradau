@@ -18,7 +18,7 @@ Pour servir un aperçu HTTP local, lance `python -m http.server 8765 --bind 127.
 
 Cloudflare Pages sert les fichiers HTML générés à la racine de `main`. Tant que le projet Cloudflare est configuré sans commande de build, exécute `npm run build` après chaque modification du contenu ou des modèles et ajoute les pages générées au commit. La limite par fichier est de 25 Mio.
 
-Cloudflare Pages exécute une fonction sur `/media/audio/*` pour répondre aux requêtes de lecture partielle et permettre d’avancer dans un épisode. Après l’ajout ou le remplacement d’un audio, `npm run build` met aussi à jour `_data/audio-sizes.json`.
+Cloudflare Pages exécute une fonction sur `/media/audio/*` pour répondre aux requêtes de lecture partielle et permettre d’avancer dans un épisode. Après l’ajout ou le remplacement d’un audio, `npm run build` met aussi à jour `functions/_lib/audio-sizes.js`.
 
 Le dépôt reste compatible avec Jekyll. Les HTML portables générés sont exclus du build Jekyll pour laisser les modèles produire les mêmes adresses depuis les sources. Pour vérifier le rendu Jekyll sur un environnement Ruby compatible, utilise le Gemfile et `bundle exec jekyll build`.
 
