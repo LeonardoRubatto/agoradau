@@ -10,7 +10,7 @@ Examined: captures du premier dessin aux deux tailles, trois essais typographiqu
 Chosen: A — un vrai enregistrement, un micro et la forme du logo permettent de comprendre le média immédiatement. Les trois accès répondent à des intentions distinctes.
 
 ## Concept
-L’ovale du logo Agora ouvre sur les personnes qui enregistrent Ago’radio. Sur téléphone, la prise de vue déborde jusqu’aux bords de l’écran. Le tableau, le studio et l’équipe changent le plan et donnent accès à la rubrique correspondante.
+L’ovale du logo Agora ouvre sur une photo d’Agora Dau en soirée. Sur téléphone, la prise de vue déborde jusqu’aux bords de l’écran et le hero occupe la hauteur disponible. Trois commandes changent le plan. Un lien souligné donne accès à la rubrique correspondante.
 Swap test: il faudrait remplacer ensemble la forme héritée du logo, la prise de vue, le son réel du premier épisode et les documents de la rédaction.
 
 ## Signature
@@ -43,7 +43,7 @@ Reference: reference/uchronia-fr | lesson: associer le fond d’une présentatio
 Archivo Black pour la voix du premier écran, Barlow Condensed pour l’édition et Source Sans 3 pour les textes et commandes. Essais sur les mots éditoriaux et l’enregistrement réel.
 
 ## Color
-Crème #F0EDE6 et encre #0A0A0A fournis. Rouge #FF3B30 pour les accents et la signalétique. Texte rouge dérivé à 28° OKLCH. Le studio garde les couleurs du portrait. Une ombre locale donne le contraste au texte posé sur la photographie.
+Crème #F0EDE6 et encre #0A0A0A fournis. Rouge #FF3B30 pour les accents et la signalétique. Texte rouge dérivé à 28° OKLCH. La photo de soirée garde le bleu des néons. Une ombre locale donne le contraste au texte posé sur la photographie.
 
 ## Motion
 160ms et 240ms pour interactions, 360ms pour la galerie et 560ms pour l’ouverture ovale sur changement de plan. Révélation des images sous la ligne de flottaison en 480ms quand leur parent arrive. Easing cubic-bezier(.22, 1, .36, 1). Rotation des plans après 7 secondes, pause visible, arrêt au focus et sans rotation en mouvement réduit. La lecture audio reste déclenchée au clic.
@@ -60,5 +60,5 @@ Grid: 4, 8, 12, 16, 20, 24, 32, 40, 48, 56, 64, 80, 96, 120.
 - example section-transitions — dévoilement des images sous le plateau, sans retard pour les ancres et le focus.
 - example text-over-image — contraste local sous le titrage. Sur téléphone, le titre s’imprime au pied de la photographie et la légende passe dans le flux.
 
-Reference: The Lighthouse — une photographie bord à bord porte le titre de l’accueil mobile. ISANA Paris — la photographie rythme les changements de sujet. Le film d’Agora Dau alterne portrait d’enregistrement, illustration d’un article et photo d’équipe. Les trois rubriques partagent une ligne typographique. Les formats de la rédaction prennent la forme d’un sommaire ouvert, en regard du titre sur ordinateur.
+Reference: The Lighthouse — une photographie bord à bord porte le titre de l’accueil mobile. ISANA Paris — la photographie rythme les changements de sujet. Le film d’Agora Dau alterne portrait de soirée sous les néons bleus, illustration d’un article et photo d’équipe. Les trois rubriques partagent une ligne typographique. Les formats de la rédaction prennent la forme d’un sommaire ouvert, en regard du titre sur ordinateur.
 

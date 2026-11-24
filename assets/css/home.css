@@ -70,7 +70,7 @@
 .stage-shot { position: absolute; inset: 0; }
 .stage-shot picture, .stage-shot img { width: 100%; height: 100%; }
 .stage-shot img { object-fit: cover; object-position: 54% 53%; }
-.stage-shot--studio img { object-position: 50% 41%; }
+.stage-shot--radio img { object-position: 54% 43%; }
 .stage-shot--journal img { object-position: 50% 53%; }
 .stage-shot--asso img { object-position: 52% 48%; }
 .stage-orbit {
@@ -140,20 +140,18 @@
 .stage-action {
   display: inline-flex;
   align-items: center;
-  justify-content: center;
-  gap: .65rem;
-  border: 1px solid var(--stage-rule);
-  border-radius: 4rem;
   color: var(--paper);
   min-height: 44px;
-  padding: .55rem 1rem;
-  text-decoration: none;
-  font-weight: 750;
+  padding-block: .45rem;
+  font: 700 clamp(1.25rem, 2.15vw, 2rem)/1 var(--display);
+  text-decoration: underline;
+  text-decoration-color: var(--red);
+  text-decoration-thickness: 2px;
+  text-underline-offset: .2em;
 }
-.stage-action i { flex: none; width: .55rem; height: .55rem; border-radius: 50%; background: var(--red); }
-.stage-action:is(:hover, :focus-visible) { border-color: var(--paper); }
+.stage-action:is(:hover, :focus-visible) { text-decoration-thickness: 3px; }
 @media (prefers-reduced-motion: no-preference) {
-  .stage-shot--studio img { animation: frame-settle 560ms var(--ease) both; }
+  .stage-shot--radio img { animation: frame-settle 560ms var(--ease) both; }
   @keyframes frame-settle { from { transform: scale(1.055); } to { transform: none; } }
 }
 
@@ -269,13 +267,15 @@
   .stage-media { width: 68%; right: 0; }
 }
 @media (max-width: 760px) {
+  .on-air { min-block-size: calc(100svh - 3.25rem); display: flex; flex-direction: column; }
   .stage {
     width: 100%;
     min-height: 0;
     padding-block: 0 1.05rem;
     align-items: stretch;
+    flex: 1 0 auto;
     grid-template-columns: minmax(0, 1fr);
-    grid-template-rows: auto clamp(16.5rem, 78vw, 25rem) auto auto;
+    grid-template-rows: auto minmax(clamp(14.5rem, 68vw, 25rem), 1fr) auto auto;
   }
   .stage-intro { display: contents; }
   .station-name, .stage h1, .station-copy, .stage-caption { margin-inline: var(--gutter); }
@@ -284,14 +284,14 @@
   .stage-oval { clip-path: none; }
   .stage-oval::after { background: linear-gradient(0deg, rgb(20 14 12 / .96), rgb(20 14 12 / .48) 29%, transparent 72%); }
   .stage-orbit { display: none; }
-  .stage-shot--studio img { object-position: 50% 33%; }
+  .stage-shot--radio img { object-position: 55% 37%; }
   .stage-shot--asso img { object-position: 54% 37%; }
   .stage h1 {
     grid-area: 2 / 1;
     z-index: 4;
     align-self: end;
     margin-bottom: .18em;
-    font-size: clamp(2.8rem, 13vw, 6rem);
+    font-size: clamp(2.8rem, 14.25vw, 6rem);
     pointer-events: none;
   }
   .stage-caption {
@@ -301,10 +301,12 @@
     min-height: 44px;
     font-size: .875rem;
   }
-  .station-copy { grid-row: 4; margin-top: .45rem; max-width: 34ch; font-size: 1rem; line-height: 1.35; }
-  .stage-controls { flex-wrap: wrap; gap: .5rem; padding-block: .45rem .9rem; }
-  .stage-keys { width: 100%; justify-content: space-between; gap: .5rem; }
-  .stage-action { margin-top: .05rem; }
+  .station-copy { grid-row: 4; margin-top: .45rem; max-width: 42ch; font-size: 1rem; line-height: 1.35; }
+  .stage-controls { flex-direction: column; align-items: stretch; gap: .65rem; padding-block: .45rem max(1rem, env(safe-area-inset-bottom)); }
+  .stage-keys { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr) minmax(0, .92fr); gap: .45rem; }
+  .stage-keys button { justify-content: center; min-height: 48px; font-size: clamp(1.2rem, 5.4vw, 1.65rem); white-space: nowrap; }
+  .stage-keys button[aria-pressed="true"]::after { inset-inline: 20%; }
+  .stage-action { min-height: 56px; border-block-start: 1px solid var(--stage-rule); font-size: clamp(1.55rem, 6vw, 2rem); }
   .stage-links { flex-wrap: wrap; gap: .3rem .8rem; }
   .edition-grid { grid-template-columns: minmax(0, 1fr); gap: 1.65rem; }
   .edition-cover { position: static; }
@@ -320,6 +322,9 @@
   .backstage .life-photo { margin-inline: 0; }
 }
 
+@media (max-width: 360px) {
+  .station-brand, .station-separator { display: none; }
+}
 .home-programme { display: grid; grid-template-columns: minmax(0,.73fr) minmax(0,1.27fr); align-items: start; gap: clamp(1.25rem,5vw,5rem); }
 .home-programme > h2 { max-width: 5ch; font-size: clamp(3.8rem, 8vw, 8rem); line-height: .84; }
 .format-index { list-style: none; padding: 0; margin: 0; border-block-start: 2px solid var(--ink); }
