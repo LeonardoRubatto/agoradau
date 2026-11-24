@@ -1,0 +1,682 @@
+{
+  "/assets/photos/babyfoot.jpg": {
+    "width": 1080,
+    "height": 810,
+    "variants": [
+      {
+        "width": 480,
+        "avif": "assets/photos/babyfoot-480.avif",
+        "webp": "assets/photos/babyfoot-480.webp"
+      },
+      {
+        "width": 800,
+        "avif": "assets/photos/babyfoot-800.avif",
+        "webp": "assets/photos/babyfoot-800.webp"
+      },
+      {
+        "width": 1080,
+        "avif": "assets/photos/babyfoot-1080.avif",
+        "webp": "assets/photos/babyfoot-1080.webp"
+      }
+    ],
+    "fallback": "assets/photos/babyfoot-800.webp",
+    "full": "assets/photos/babyfoot-1080.webp"
+  },
+  "/assets/photos/bureau-prenoms.jpg": {
+    "width": 1080,
+    "height": 720,
+    "variants": [
+      {
+        "width": 480,
+        "avif": "assets/photos/bureau-prenoms-480.avif",
+        "webp": "assets/photos/bureau-prenoms-480.webp"
+      },
+      {
+        "width": 800,
+        "avif": "assets/photos/bureau-prenoms-800.avif",
+        "webp": "assets/photos/bureau-prenoms-800.webp"
+      },
+      {
+        "width": 1080,
+        "avif": "assets/photos/bureau-prenoms-1080.avif",
+        "webp": "assets/photos/bureau-prenoms-1080.webp"
+      }
+    ],
+    "fallback": "assets/photos/bureau-prenoms-800.webp",
+    "full": "assets/photos/bureau-prenoms-1080.webp"
+  },
+  "/assets/photos/bureau-roles.jpg": {
+    "width": 1080,
+    "height": 720,
+    "variants": [
+      {
+        "width": 480,
+        "avif": "assets/photos/bureau-roles-480.avif",
+        "webp": "assets/photos/bureau-roles-480.webp"
+      },
+      {
+        "width": 800,
+        "avif": "assets/photos/bureau-roles-800.avif",
+        "webp": "assets/photos/bureau-roles-800.webp"
+      },
+      {
+        "width": 1080,
+        "avif": "assets/photos/bureau-roles-1080.avif",
+        "webp": "assets/photos/bureau-roles-1080.webp"
+      }
+    ],
+    "fallback": "assets/photos/bureau-roles-800.webp",
+    "full": "assets/photos/bureau-roles-1080.webp"
+  },
+  "/assets/photos/groupe-bar.jpg": {
+    "width": 3302,
+    "height": 2476,
+    "variants": [
+      {
+        "width": 480,
+        "avif": "assets/photos/groupe-bar-480.avif",
+        "webp": "assets/photos/groupe-bar-480.webp"
+      },
+      {
+        "width": 800,
+        "avif": "assets/photos/groupe-bar-800.avif",
+        "webp": "assets/photos/groupe-bar-800.webp"
+      },
+      {
+        "width": 1440,
+        "avif": "assets/photos/groupe-bar-1440.avif",
+        "webp": "assets/photos/groupe-bar-1440.webp"
+      }
+    ],
+    "fallback": "assets/photos/groupe-bar-800.webp",
+    "full": "assets/photos/groupe-bar-1440.webp"
+  },
+  "/assets/photos/nuit.jpg": {
+    "width": 3024,
+    "height": 4032,
+    "variants": [
+      {
+        "width": 480,
+        "avif": "assets/photos/nuit-480.avif",
+        "webp": "assets/photos/nuit-480.webp"
+      },
+      {
+        "width": 800,
+        "avif": "assets/photos/nuit-800.avif",
+        "webp": "assets/photos/nuit-800.webp"
+      },
+      {
+        "width": 1440,
+        "avif": "assets/photos/nuit-1440.avif",
+        "webp": "assets/photos/nuit-1440.webp"
+      }
+    ],
+    "fallback": "assets/photos/nuit-800.webp",
+    "full": "assets/photos/nuit-1440.webp"
+  },
+  "/assets/photos/podcast-selfie.jpg": {
+    "width": 2316,
+    "height": 3088,
+    "variants": [
+      {
+        "width": 480,
+        "avif": "assets/photos/podcast-selfie-480.avif",
+        "webp": "assets/photos/podcast-selfie-480.webp"
+      },
+      {
+        "width": 800,
+        "avif": "assets/photos/podcast-selfie-800.avif",
+        "webp": "assets/photos/podcast-selfie-800.webp"
+      },
+      {
+        "width": 1440,
+        "avif": "assets/photos/podcast-selfie-1440.avif",
+        "webp": "assets/photos/podcast-selfie-1440.webp"
+      }
+    ],
+    "fallback": "assets/photos/podcast-selfie-800.webp",
+    "full": "assets/photos/podcast-selfie-1440.webp"
+  },
+  "/assets/photos/podcast-studio-1.jpg": {
+    "width": 1170,
+    "height": 2071,
+    "variants": [
+      {
+        "width": 480,
+        "avif": "assets/photos/podcast-studio-1-480.avif",
+        "webp": "assets/photos/podcast-studio-1-480.webp"
+      },
+      {
+        "width": 800,
+        "avif": "assets/photos/podcast-studio-1-800.avif",
+        "webp": "assets/photos/podcast-studio-1-800.webp"
+      },
+      {
+        "width": 1170,
+        "avif": "assets/photos/podcast-studio-1-1170.avif",
+        "webp": "assets/photos/podcast-studio-1-1170.webp"
+      }
+    ],
+    "fallback": "assets/photos/podcast-studio-1-800.webp",
+    "full": "assets/photos/podcast-studio-1-1170.webp"
+  },
+  "/assets/photos/podcast-studio-2.jpg": {
+    "width": 1170,
+    "height": 2073,
+    "variants": [
+      {
+        "width": 480,
+        "avif": "assets/photos/podcast-studio-2-480.avif",
+        "webp": "assets/photos/podcast-studio-2-480.webp"
+      },
+      {
+        "width": 800,
+        "avif": "assets/photos/podcast-studio-2-800.avif",
+        "webp": "assets/photos/podcast-studio-2-800.webp"
+      },
+      {
+        "width": 1170,
+        "avif": "assets/photos/podcast-studio-2-1170.avif",
+        "webp": "assets/photos/podcast-studio-2-1170.webp"
+      }
+    ],
+    "fallback": "assets/photos/podcast-studio-2-800.webp",
+    "full": "assets/photos/podcast-studio-2-1170.webp"
+  },
+  "/assets/photos/pole-communication.jpg": {
+    "width": 1080,
+    "height": 720,
+    "variants": [
+      {
+        "width": 480,
+        "avif": "assets/photos/pole-communication-480.avif",
+        "webp": "assets/photos/pole-communication-480.webp"
+      },
+      {
+        "width": 800,
+        "avif": "assets/photos/pole-communication-800.avif",
+        "webp": "assets/photos/pole-communication-800.webp"
+      },
+      {
+        "width": 1080,
+        "avif": "assets/photos/pole-communication-1080.avif",
+        "webp": "assets/photos/pole-communication-1080.webp"
+      }
+    ],
+    "fallback": "assets/photos/pole-communication-800.webp",
+    "full": "assets/photos/pole-communication-1080.webp"
+  },
+  "/assets/photos/pole-event.jpg": {
+    "width": 1080,
+    "height": 720,
+    "variants": [
+      {
+        "width": 480,
+        "avif": "assets/photos/pole-event-480.avif",
+        "webp": "assets/photos/pole-event-480.webp"
+      },
+      {
+        "width": 800,
+        "avif": "assets/photos/pole-event-800.avif",
+        "webp": "assets/photos/pole-event-800.webp"
+      },
+      {
+        "width": 1080,
+        "avif": "assets/photos/pole-event-1080.avif",
+        "webp": "assets/photos/pole-event-1080.webp"
+      }
+    ],
+    "fallback": "assets/photos/pole-event-800.webp",
+    "full": "assets/photos/pole-event-1080.webp"
+  },
+  "/assets/photos/pole-production.jpg": {
+    "width": 1080,
+    "height": 720,
+    "variants": [
+      {
+        "width": 480,
+        "avif": "assets/photos/pole-production-480.avif",
+        "webp": "assets/photos/pole-production-480.webp"
+      },
+      {
+        "width": 800,
+        "avif": "assets/photos/pole-production-800.avif",
+        "webp": "assets/photos/pole-production-800.webp"
+      },
+      {
+        "width": 1080,
+        "avif": "assets/photos/pole-production-1080.avif",
+        "webp": "assets/photos/pole-production-1080.webp"
+      }
+    ],
+    "fallback": "assets/photos/pole-production-800.webp",
+    "full": "assets/photos/pole-production-1080.webp"
+  },
+  "/assets/photos/pole-redaction.jpg": {
+    "width": 1080,
+    "height": 720,
+    "variants": [
+      {
+        "width": 480,
+        "avif": "assets/photos/pole-redaction-480.avif",
+        "webp": "assets/photos/pole-redaction-480.webp"
+      },
+      {
+        "width": 800,
+        "avif": "assets/photos/pole-redaction-800.avif",
+        "webp": "assets/photos/pole-redaction-800.webp"
+      },
+      {
+        "width": 1080,
+        "avif": "assets/photos/pole-redaction-1080.avif",
+        "webp": "assets/photos/pole-redaction-1080.webp"
+      }
+    ],
+    "fallback": "assets/photos/pole-redaction-800.webp",
+    "full": "assets/photos/pole-redaction-1080.webp"
+  },
+  "/assets/photos/sans-culottes.jpg": {
+    "width": 4284,
+    "height": 5712,
+    "variants": [
+      {
+        "width": 480,
+        "avif": "assets/photos/sans-culottes-480.avif",
+        "webp": "assets/photos/sans-culottes-480.webp"
+      },
+      {
+        "width": 800,
+        "avif": "assets/photos/sans-culottes-800.avif",
+        "webp": "assets/photos/sans-culottes-800.webp"
+      },
+      {
+        "width": 1440,
+        "avif": "assets/photos/sans-culottes-1440.avif",
+        "webp": "assets/photos/sans-culottes-1440.webp"
+      }
+    ],
+    "fallback": "assets/photos/sans-culottes-800.webp",
+    "full": "assets/photos/sans-culottes-1440.webp"
+  },
+  "/assets/photos/soiree-bar-1.jpg": {
+    "width": 2000,
+    "height": 1333,
+    "variants": [
+      {
+        "width": 480,
+        "avif": "assets/photos/soiree-bar-1-480.avif",
+        "webp": "assets/photos/soiree-bar-1-480.webp"
+      },
+      {
+        "width": 800,
+        "avif": "assets/photos/soiree-bar-1-800.avif",
+        "webp": "assets/photos/soiree-bar-1-800.webp"
+      },
+      {
+        "width": 1440,
+        "avif": "assets/photos/soiree-bar-1-1440.avif",
+        "webp": "assets/photos/soiree-bar-1-1440.webp"
+      }
+    ],
+    "fallback": "assets/photos/soiree-bar-1-800.webp",
+    "full": "assets/photos/soiree-bar-1-1440.webp"
+  },
+  "/assets/photos/soiree-bar-2.jpg": {
+    "width": 2000,
+    "height": 1333,
+    "variants": [
+      {
+        "width": 480,
+        "avif": "assets/photos/soiree-bar-2-480.avif",
+        "webp": "assets/photos/soiree-bar-2-480.webp"
+      },
+      {
+        "width": 800,
+        "avif": "assets/photos/soiree-bar-2-800.avif",
+        "webp": "assets/photos/soiree-bar-2-800.webp"
+      },
+      {
+        "width": 1440,
+        "avif": "assets/photos/soiree-bar-2-1440.avif",
+        "webp": "assets/photos/soiree-bar-2-1440.webp"
+      }
+    ],
+    "fallback": "assets/photos/soiree-bar-2-800.webp",
+    "full": "assets/photos/soiree-bar-2-1440.webp"
+  },
+  "/assets/photos/soiree-bar-3.jpg": {
+    "width": 2000,
+    "height": 1333,
+    "variants": [
+      {
+        "width": 480,
+        "avif": "assets/photos/soiree-bar-3-480.avif",
+        "webp": "assets/photos/soiree-bar-3-480.webp"
+      },
+      {
+        "width": 800,
+        "avif": "assets/photos/soiree-bar-3-800.avif",
+        "webp": "assets/photos/soiree-bar-3-800.webp"
+      },
+      {
+        "width": 1440,
+        "avif": "assets/photos/soiree-bar-3-1440.avif",
+        "webp": "assets/photos/soiree-bar-3-1440.webp"
+      }
+    ],
+    "fallback": "assets/photos/soiree-bar-3-800.webp",
+    "full": "assets/photos/soiree-bar-3-1440.webp"
+  },
+  "/assets/photos/soiree-bar-4.jpg": {
+    "width": 2000,
+    "height": 1333,
+    "variants": [
+      {
+        "width": 480,
+        "avif": "assets/photos/soiree-bar-4-480.avif",
+        "webp": "assets/photos/soiree-bar-4-480.webp"
+      },
+      {
+        "width": 800,
+        "avif": "assets/photos/soiree-bar-4-800.avif",
+        "webp": "assets/photos/soiree-bar-4-800.webp"
+      },
+      {
+        "width": 1440,
+        "avif": "assets/photos/soiree-bar-4-1440.avif",
+        "webp": "assets/photos/soiree-bar-4-1440.webp"
+      }
+    ],
+    "fallback": "assets/photos/soiree-bar-4-800.webp",
+    "full": "assets/photos/soiree-bar-4-1440.webp"
+  },
+  "/assets/photos/soiree-bar-5.jpg": {
+    "width": 2000,
+    "height": 1333,
+    "variants": [
+      {
+        "width": 480,
+        "avif": "assets/photos/soiree-bar-5-480.avif",
+        "webp": "assets/photos/soiree-bar-5-480.webp"
+      },
+      {
+        "width": 800,
+        "avif": "assets/photos/soiree-bar-5-800.avif",
+        "webp": "assets/photos/soiree-bar-5-800.webp"
+      },
+      {
+        "width": 1440,
+        "avif": "assets/photos/soiree-bar-5-1440.avif",
+        "webp": "assets/photos/soiree-bar-5-1440.webp"
+      }
+    ],
+    "fallback": "assets/photos/soiree-bar-5-800.webp",
+    "full": "assets/photos/soiree-bar-5-1440.webp"
+  },
+  "/assets/photos/soiree-bar-6.jpg": {
+    "width": 2000,
+    "height": 1333,
+    "variants": [
+      {
+        "width": 480,
+        "avif": "assets/photos/soiree-bar-6-480.avif",
+        "webp": "assets/photos/soiree-bar-6-480.webp"
+      },
+      {
+        "width": 800,
+        "avif": "assets/photos/soiree-bar-6-800.avif",
+        "webp": "assets/photos/soiree-bar-6-800.webp"
+      },
+      {
+        "width": 1440,
+        "avif": "assets/photos/soiree-bar-6-1440.avif",
+        "webp": "assets/photos/soiree-bar-6-1440.webp"
+      }
+    ],
+    "fallback": "assets/photos/soiree-bar-6-800.webp",
+    "full": "assets/photos/soiree-bar-6-1440.webp"
+  },
+  "/assets/photos/soiree-bar-7.jpg": {
+    "width": 2000,
+    "height": 1333,
+    "variants": [
+      {
+        "width": 480,
+        "avif": "assets/photos/soiree-bar-7-480.avif",
+        "webp": "assets/photos/soiree-bar-7-480.webp"
+      },
+      {
+        "width": 800,
+        "avif": "assets/photos/soiree-bar-7-800.avif",
+        "webp": "assets/photos/soiree-bar-7-800.webp"
+      },
+      {
+        "width": 1440,
+        "avif": "assets/photos/soiree-bar-7-1440.avif",
+        "webp": "assets/photos/soiree-bar-7-1440.webp"
+      }
+    ],
+    "fallback": "assets/photos/soiree-bar-7-800.webp",
+    "full": "assets/photos/soiree-bar-7-1440.webp"
+  },
+  "/assets/photos/soiree-bleue.jpg": {
+    "width": 1166,
+    "height": 874,
+    "variants": [
+      {
+        "width": 480,
+        "avif": "assets/photos/soiree-bleue-480.avif",
+        "webp": "assets/photos/soiree-bleue-480.webp"
+      },
+      {
+        "width": 800,
+        "avif": "assets/photos/soiree-bleue-800.avif",
+        "webp": "assets/photos/soiree-bleue-800.webp"
+      },
+      {
+        "width": 1166,
+        "avif": "assets/photos/soiree-bleue-1166.avif",
+        "webp": "assets/photos/soiree-bleue-1166.webp"
+      }
+    ],
+    "fallback": "assets/photos/soiree-bleue-800.webp",
+    "full": "assets/photos/soiree-bleue-1166.webp"
+  },
+  "/assets/photos/terrasse-1.jpg": {
+    "width": 720,
+    "height": 540,
+    "variants": [
+      {
+        "width": 480,
+        "avif": "assets/photos/terrasse-1-480.avif",
+        "webp": "assets/photos/terrasse-1-480.webp"
+      },
+      {
+        "width": 720,
+        "avif": "assets/photos/terrasse-1-720.avif",
+        "webp": "assets/photos/terrasse-1-720.webp"
+      }
+    ],
+    "fallback": "assets/photos/terrasse-1-720.webp",
+    "full": "assets/photos/terrasse-1-720.webp"
+  },
+  "/assets/photos/terrasse-2.jpg": {
+    "width": 720,
+    "height": 540,
+    "variants": [
+      {
+        "width": 480,
+        "avif": "assets/photos/terrasse-2-480.avif",
+        "webp": "assets/photos/terrasse-2-480.webp"
+      },
+      {
+        "width": 720,
+        "avif": "assets/photos/terrasse-2-720.avif",
+        "webp": "assets/photos/terrasse-2-720.webp"
+      }
+    ],
+    "fallback": "assets/photos/terrasse-2-720.webp",
+    "full": "assets/photos/terrasse-2-720.webp"
+  },
+  "/analyse-colonialisme-vert.jpg": {
+    "width": 1080,
+    "height": 1080,
+    "variants": [
+      {
+        "width": 400,
+        "avif": "assets/covers/analyse-colonialisme-vert-400.avif",
+        "webp": "assets/covers/analyse-colonialisme-vert-400.webp"
+      },
+      {
+        "width": 760,
+        "avif": "assets/covers/analyse-colonialisme-vert-760.avif",
+        "webp": "assets/covers/analyse-colonialisme-vert-760.webp"
+      },
+      {
+        "width": 1080,
+        "avif": "assets/covers/analyse-colonialisme-vert-1080.avif",
+        "webp": "assets/covers/analyse-colonialisme-vert-1080.webp"
+      }
+    ],
+    "fallback": "assets/covers/analyse-colonialisme-vert-760.webp",
+    "full": "assets/covers/analyse-colonialisme-vert-1080.webp"
+  },
+  "/analyse-fin-sommeil.jpg": {
+    "width": 1080,
+    "height": 1080,
+    "variants": [
+      {
+        "width": 400,
+        "avif": "assets/covers/analyse-fin-sommeil-400.avif",
+        "webp": "assets/covers/analyse-fin-sommeil-400.webp"
+      },
+      {
+        "width": 760,
+        "avif": "assets/covers/analyse-fin-sommeil-760.avif",
+        "webp": "assets/covers/analyse-fin-sommeil-760.webp"
+      },
+      {
+        "width": 1080,
+        "avif": "assets/covers/analyse-fin-sommeil-1080.avif",
+        "webp": "assets/covers/analyse-fin-sommeil-1080.webp"
+      }
+    ],
+    "fallback": "assets/covers/analyse-fin-sommeil-760.webp",
+    "full": "assets/covers/analyse-fin-sommeil-1080.webp"
+  },
+  "/analyse-la-gradiva.jpg": {
+    "width": 1080,
+    "height": 1080,
+    "variants": [
+      {
+        "width": 400,
+        "avif": "assets/covers/analyse-la-gradiva-400.avif",
+        "webp": "assets/covers/analyse-la-gradiva-400.webp"
+      },
+      {
+        "width": 760,
+        "avif": "assets/covers/analyse-la-gradiva-760.avif",
+        "webp": "assets/covers/analyse-la-gradiva-760.webp"
+      },
+      {
+        "width": 1080,
+        "avif": "assets/covers/analyse-la-gradiva-1080.avif",
+        "webp": "assets/covers/analyse-la-gradiva-1080.webp"
+      }
+    ],
+    "fallback": "assets/covers/analyse-la-gradiva-760.webp",
+    "full": "assets/covers/analyse-la-gradiva-1080.webp"
+  },
+  "/analyse-modele-masculin.jpg": {
+    "width": 1080,
+    "height": 1080,
+    "variants": [
+      {
+        "width": 400,
+        "avif": "assets/covers/analyse-modele-masculin-400.avif",
+        "webp": "assets/covers/analyse-modele-masculin-400.webp"
+      },
+      {
+        "width": 760,
+        "avif": "assets/covers/analyse-modele-masculin-760.avif",
+        "webp": "assets/covers/analyse-modele-masculin-760.webp"
+      },
+      {
+        "width": 1080,
+        "avif": "assets/covers/analyse-modele-masculin-1080.avif",
+        "webp": "assets/covers/analyse-modele-masculin-1080.webp"
+      }
+    ],
+    "fallback": "assets/covers/analyse-modele-masculin-760.webp",
+    "full": "assets/covers/analyse-modele-masculin-1080.webp"
+  },
+  "/analyse-nuit-filature-wright.jpg": {
+    "width": 763,
+    "height": 614,
+    "variants": [
+      {
+        "width": 400,
+        "avif": "assets/covers/analyse-nuit-filature-wright-400.avif",
+        "webp": "assets/covers/analyse-nuit-filature-wright-400.webp"
+      },
+      {
+        "width": 760,
+        "avif": "assets/covers/analyse-nuit-filature-wright-760.avif",
+        "webp": "assets/covers/analyse-nuit-filature-wright-760.webp"
+      },
+      {
+        "width": 763,
+        "avif": "assets/covers/analyse-nuit-filature-wright-763.avif",
+        "webp": "assets/covers/analyse-nuit-filature-wright-763.webp"
+      }
+    ],
+    "fallback": "assets/covers/analyse-nuit-filature-wright-760.webp",
+    "full": "assets/covers/analyse-nuit-filature-wright-763.webp"
+  },
+  "/analyse-trump-omnipresence.jpg": {
+    "width": 1080,
+    "height": 1080,
+    "variants": [
+      {
+        "width": 400,
+        "avif": "assets/covers/analyse-trump-omnipresence-400.avif",
+        "webp": "assets/covers/analyse-trump-omnipresence-400.webp"
+      },
+      {
+        "width": 760,
+        "avif": "assets/covers/analyse-trump-omnipresence-760.avif",
+        "webp": "assets/covers/analyse-trump-omnipresence-760.webp"
+      },
+      {
+        "width": 1080,
+        "avif": "assets/covers/analyse-trump-omnipresence-1080.avif",
+        "webp": "assets/covers/analyse-trump-omnipresence-1080.webp"
+      }
+    ],
+    "fallback": "assets/covers/analyse-trump-omnipresence-760.webp",
+    "full": "assets/covers/analyse-trump-omnipresence-1080.webp"
+  },
+  "/media/agoradio.jpg": {
+    "width": 960,
+    "height": 960,
+    "variants": [
+      {
+        "width": 400,
+        "avif": "assets/covers/agoradio-400.avif",
+        "webp": "assets/covers/agoradio-400.webp"
+      },
+      {
+        "width": 760,
+        "avif": "assets/covers/agoradio-760.avif",
+        "webp": "assets/covers/agoradio-760.webp"
+      },
+      {
+        "width": 960,
+        "avif": "assets/covers/agoradio-960.avif",
+        "webp": "assets/covers/agoradio-960.webp"
+      }
+    ],
+    "fallback": "assets/covers/agoradio-760.webp",
+    "full": "assets/covers/agoradio-960.webp"
+  }
+}

@@ -1,0 +1,10 @@
+<!doctype html>
+<html lang="fr">
+{% assign root = page.root | default: './' %}
+{% include head.html %}
+<body class="{{ page.body_class | escape }}">
+{% include header.html %}
+{{ content }}
+{% include footer.html %}
+</body>
+</html>

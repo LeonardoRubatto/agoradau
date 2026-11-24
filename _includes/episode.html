@@ -1,0 +1,32 @@
+{% assign ep = include.item %}
+{% assign cover = ep.cover | default: '/media/agoradio.jpg' %}
+<article id="episode-{{ ep.episode | escape }}" class="episode">
+  {% include picture.html path=cover alt="Visuel Ago’radio" class="episode-art" sizes="(max-width: 610px) 76vw, 290px" %}
+  <div class="episode-content">
+    <p class="entry-meta"><span>Épisode {{ ep.episode | escape }}</span>{% if ep.duration %}<span>{{ ep.duration | escape }}</span>{% endif %}{% if ep.date %}<time datetime="{{ ep.date | date: '%Y-%m-%d' }}">{{ ep.date | date: "%d/%m/%Y" }}</time>{% endif %}</p>
+    <h3>{{ ep.title | escape }}</h3>
+    {% if ep.guests %}<p class="episode-guest">Avec {{ ep.guests | escape }}</p>{% endif %}
+    <p>{{ ep.dek | escape }}</p>
+    {% if ep.audio %}{% include audio-player.html path=ep.audio title=ep.title %}{% endif %}
+    {% if ep.spotify or ep.apple or ep.youtube %}
+      <ul class="platforms">
+        {% if ep.spotify %}<li><a href="{{ ep.spotify | escape }}">Spotify</a></li>{% endif %}
+        {% if ep.apple %}<li><a href="{{ ep.apple | escape }}">Apple Podcasts</a></li>{% endif %}
+        {% if ep.youtube %}<li><a href="{{ ep.youtube | escape }}">YouTube</a></li>{% endif %}
+      </ul>
+    {% endif %}
+    {% if ep.excerpts and ep.excerpts.size > 0 %}
+      <div class="excerpts">
+        <h4>Extraits</h4>
+        {% for clip in ep.excerpts %}
+          <div><p><strong>{{ clip.title | escape }}</strong>{% if clip.duration %} · {{ clip.duration | escape }}{% endif %}</p>
+          {% include audio-player.html path=clip.audio title=clip.title %}
+          {% if clip.transcript %}<details><summary>Lire la transcription</summary><div class="prose">{{ clip.transcript | markdownify }}</div></details>{% endif %}</div>
+        {% endfor %}
+      </div>
+    {% endif %}
+    {% assign notes = ep.body | default: ep.content %}
+    {% if notes and notes != '' %}<details class="disclosure"><summary>Notes de l’épisode</summary><div class="prose">{{ notes | markdownify }}</div></details>{% endif %}
+    {% if ep.transcript %}<details class="disclosure"><summary>Lire la transcription</summary><div class="prose">{{ ep.transcript | markdownify }}</div></details>{% endif %}
+  </div>
+</article>

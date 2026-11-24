@@ -1,0 +1,126 @@
+---
+layout: site
+title: "L’association"
+description: "Le projet d’Agora Dau, son bureau, ses quatre pôles et la vie du média étudiant en photos."
+permalink: /association/
+root: "../"
+section: asso
+body_class: association-page
+---
+{% assign root = page.root %}
+<main id="contenu">
+  <section class="collectif-cover" id="apropos" aria-labelledby="asso-titre">
+    <div class="wrap collectif-head">
+      <h1 id="asso-titre">L’asso</h1>
+      <a href="#bureau" class="simple-link">Le bureau et les pôles</a>
+    </div>
+    <figure class="wrap collectif-image">
+      {% include picture.html path="/assets/photos/groupe-bar.jpg" alt="Des membres d’Agora Dau réunis sous les arches éclairées en rouge" sizes="(max-width: 760px) 95vw, 1280px" eager=true %}
+      <figcaption>Agora Dau en soirée</figcaption>
+    </figure>
+  </section>
+  <div class="wrap collectif-project">
+    <h2>Le projet</h2>
+    <div>
+      {% for paragraph in site.data.texte-source.mission offset:1 %}<p>{{ paragraph | escape }}</p>{% endfor %}
+      <p>À Paris, les sujets du média croisent les questions financières, juridiques, économiques et politiques.</p>
+      <p><a class="ink-button" href="../charte/index.html"><span>Lire la charte anti-IA</span></a></p>
+    </div>
+  </div>
+
+  <section class="format-sheet" id="formats" aria-labelledby="formats-titre">
+    <div class="wrap section">
+      <h2 id="formats-titre">Nos formats</h2>
+      {% include formats.html %}
+    </div>
+  </section>
+
+  <section class="wrap section" id="bureau" aria-labelledby="bureau-titre">
+    <div class="bureau">
+      <figure>
+        {% include picture.html path="/assets/photos/bureau-prenoms.jpg" alt="Les cinq membres du bureau réunis devant un bâtiment éclairé" sizes="(max-width: 760px) 92vw, 720px" %}
+        <figcaption>Mandat {{ site.data.equipe.mandat }}</figcaption>
+      </figure>
+      <div class="bureau-index">
+        <h2 id="bureau-titre">Le bureau</h2>
+        <dl>
+          {% for member in site.data.equipe.bureau %}
+          <div><dt>{{ member.name | escape }}</dt><dd>{{ member.role | escape }}</dd></div>
+          {% endfor %}
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <section class="poles-panel" id="poles" aria-labelledby="poles-titre">
+    <div class="wrap section">
+      <div class="section-heading"><h2 id="poles-titre">Les quatre pôles</h2></div>
+      <div class="poles-grid">
+      {% for pole in site.data.equipe.poles %}
+        {% assign role_index = pole.source %}
+        <article>
+          {% include picture.html path=pole.photo alt=pole.alt sizes="(max-width: 670px) 92vw, (max-width: 1060px) 45vw, 294px" %}
+          <h3>{{ pole.name | escape }}</h3>
+          <p>{{ site.data.texte-source.poles[role_index] | escape }}</p>
+        </article>
+      {% endfor %}
+      </div>
+    </div>
+  </section>
+
+  <section id="photos" class="wrap section photo-section" aria-labelledby="photos-titre">
+    <div class="section-heading">
+      <h2 id="photos-titre">La vie de l’asso</h2>
+      <div class="filters" data-gallery-filters hidden role="group" aria-label="Catégories de photos">
+        <button type="button" data-series="all" aria-pressed="true">Tout</button>
+        <button type="button" data-series="equipe" aria-pressed="false">Équipe</button><button type="button" data-series="studio" aria-pressed="false">Studio</button>
+        <button type="button" data-series="rencontres" aria-pressed="false">Rencontres</button>
+      </div>
+    </div>
+    <ul class="photo-grid" data-gallery-list>
+      {% for photo in site.data.galerie %}
+      {% assign image_ref = site.data.images[photo.path] %}
+      <li data-series-item="{{ photo.category }}">
+        <a class="photo-link" href="{{ root }}{{ image_ref.full }}" data-photo aria-label="Agrandir la photo : {{ photo.title | escape }}">
+          {% include picture.html path=photo.path alt=photo.alt sizes="(max-width: 480px) 44vw, (max-width: 760px) 44vw, 32vw" %}
+          <span data-photo-caption>{{ photo.title | escape }}</span>
+        </a>
+      </li>
+      {% endfor %}
+    </ul>
+    <dialog class="photo-dialog" data-photo-dialog aria-label="Photographies d’Agora Dau">
+      <p class="photo-count" data-photo-count></p>
+      <button type="button" data-photo-close autofocus>Fermer</button>
+      <button type="button" data-photo-prev aria-label="Photo précédente"><span aria-hidden="true">‹</span></button>
+      <button type="button" data-photo-next aria-label="Photo suivante"><span aria-hidden="true">›</span></button>
+      <figure class="photo-view-stage">
+        <img data-photo-large alt="">
+        <p data-photo-error hidden>La photo n’a pas pu se charger.</p>
+        <figcaption data-photo-caption-live aria-live="polite"></figcaption>
+      </figure>
+    </dialog>
+  </section>
+
+  <section class="join-panel" id="rejoindre">
+    <div class="wrap section collectif-project">
+      <h2>Construis l’asso avec nous</h2>
+      <div>
+        <p>{{ site.data.texte-source.recruitment | escape }}</p>
+        <p>{{ site.data.texte-source.poles[4] | escape }}</p>
+        <div class="join-links">
+          <a class="ink-button" href="mailto:{{ site.data.site.email }}?subject=Rejoindre%20Agora%20Dau"><span>Écrire à Agora Dau</span></a>
+          <a class="simple-link" href="{{ site.data.site.instagram }}">Instagram</a>
+          <a class="simple-link" href="{{ site.data.site.linkedin }}">LinkedIn</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="wrap section participation" id="participer">
+    <div><h2>Un sujet en tête&nbsp;?</h2><p>{{ site.data.texte-source.participation | escape }}</p></div>
+    <div class="join-links">
+      <a class="ink-button" href="../app/index.html#/proposer"><span>Proposer un article ou un podcast</span></a>
+      <a class="simple-link" href="mailto:{{ site.data.site.email }}">Écrire au bureau</a>
+    </div>
+  </section>
+</main>
+

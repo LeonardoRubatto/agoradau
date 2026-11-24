@@ -1,0 +1,58 @@
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  {% assign title = page.seo_title | default: page.title %}
+  {% unless page.home or page.seo_title %}{% assign title = title | append: ' | Agora Dau' %}{% endunless %}
+  {% assign description = page.description | default: 'Agora Dau, média étudiant indépendant. Analyses, podcast et vie associative.' %}
+  {% assign social = '/og-image.png' %}
+  {% assign social_width = 1200 %}
+  {% assign social_height = 630 %}
+  {% assign social_alt = 'Logo et slogan d’Agora Dau sur fond crème' %}
+  {% if page.cover and page.cover != '/analyse-trump-omnipresence.jpg' %}
+    {% assign social = page.cover %}
+    {% assign media = site.data.images[social] %}
+    {% assign social_width = media.width | default: 1080 %}
+    {% assign social_height = media.height | default: 1080 %}
+    {% assign social_alt = page.cover_alt | default: page.title %}
+  {% endif %}
+  <title>{{ title | escape }}</title>
+  <meta name="description" content="{{ description | strip_newlines | escape }}">
+  <link rel="canonical" href="{{ site.url }}{{ page.url }}">
+  <meta name="robots" content="{{ page.robots | default: 'index, follow' }}">
+  <meta name="theme-color" content="#F0EDE6">
+  <meta property="og:type" content="{% if page.collection %}article{% else %}website{% endif %}">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:site_name" content="Agora Dau">
+  <meta property="og:url" content="{{ site.url }}{{ page.url }}">
+  <meta property="og:title" content="{{ title | escape }}">
+  <meta property="og:description" content="{{ description | strip_newlines | escape }}">
+  <meta property="og:image" content="{{ site.url }}{{ social | escape }}">
+  <meta property="og:image:width" content="{{ social_width }}">
+  <meta property="og:image:height" content="{{ social_height }}">
+  <meta property="og:image:alt" content="{{ social_alt | escape }}">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{{ title | escape }}">
+  <meta name="twitter:description" content="{{ description | strip_newlines | escape }}">
+  <meta name="twitter:image" content="{{ site.url }}{{ social | escape }}">
+  <link rel="icon" href="{{ root }}favicon.ico" sizes="any">
+  <link rel="icon" href="{{ root }}favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="{{ root }}favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="icon" href="{{ root }}favicon-16.png" sizes="16x16" type="image/png">
+  <link rel="apple-touch-icon" href="{{ root }}apple-touch-icon.png">
+  <link rel="stylesheet" href="{{ root }}assets/css/site.css">
+  <link rel="stylesheet" href="{{ root }}assets/css/editions.css">
+  <script src="{{ root }}assets/js/site.js" defer></script>
+  {% if page.home %}
+  <link rel="stylesheet" href="{{ root }}assets/css/home.css">
+  <script src="{{ root }}assets/js/home.js" defer></script>
+  {% endif %}
+  {% if page.home %}
+  <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"Organization","name":"Agora Dau","url":"https://agoradau.fr/","logo":"https://agoradau.fr/assets/brand/agora-dau-logo.png","description":"Média étudiant indépendant","email":"agora.dau@gmail.com","identifier":"W913016495","sameAs":["https://www.instagram.com/agora_dau/","https://www.linkedin.com/company/agora-dau/"]}
+  </script>
+  {% elsif page.collection %}
+  <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"Article","headline":{{ page.title | jsonify | replace: '</', '<\/' }},"description":{{ description | jsonify | replace: '</', '<\/' }},"mainEntityOfPage":{{ page.url | prepend: site.url | jsonify }},"image":{{ social | prepend: site.url | jsonify }},"datePublished":{{ page.date | date: "%Y-%m-%d" | jsonify }},"author":{"@type":"Person","name":{{ page.author | jsonify | replace: '</', '<\/' }}},"publisher":{"@type":"Organization","name":"Agora Dau","url":"https://agoradau.fr/"},"inLanguage":"fr"}
+  </script>
+  {% endif %}
+</head>

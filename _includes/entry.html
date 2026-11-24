@@ -1,0 +1,18 @@
+{% assign entry = include.item %}
+{% assign entry_path = entry.url | remove_first: '/' %}
+{% assign title_tag = include.heading | default: 'h3' %}
+{% assign illustrated = false %}
+{% if include.image and entry.cover and entry.cover != '/analyse-trump-omnipresence.jpg' %}{% assign illustrated = true %}{% endif %}
+<article class="entry{% if include.feature %} entry-feature{% endif %}{% if include.image and illustrated == false %} entry-no-cover{% endif %}">
+  {% if illustrated %}
+  <div class="entry-image">
+    {% include picture.html path=entry.cover alt=entry.cover_alt sizes=include.sizes eager=include.eager %}
+  </div>
+  {% endif %}
+  <div class="entry-copy">
+    <p class="entry-meta"><span>{% if entry.collection == 'actualites' %}Vie de l’asso{% else %}{{ entry.kicker | split: ' · ' | first | default: 'Analyse' | escape }}{% endif %}</span>{% if entry.date %}<time datetime="{{ entry.date | date: '%Y-%m-%d' }}">{% if entry.date_display %}{{ entry.date_display | escape }}{% else %}{{ entry.date | date: "%d/%m/%Y" }}{% endif %}</time>{% endif %}</p>
+    <{{ title_tag }} class="entry-title"><a href="{{ root }}{{ entry_path }}index.html">{{ entry.title | escape }}</a></{{ title_tag }}>
+    {% if include.summary and entry.dek %}<p>{{ entry.dek | escape }}</p>{% endif %}
+    {% if entry.reading_time %}<span class="entry-duration">{{ entry.reading_time | escape }}</span>{% endif %}
+  </div>
+</article>

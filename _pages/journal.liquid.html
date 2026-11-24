@@ -1,0 +1,38 @@
+---
+layout: site
+title: "Le journal"
+description: "Toutes les publications d’Agora Dau. Retrouvez les analyses, les articles et les nouvelles de l’association."
+permalink: /journal/
+root: "../"
+section: journal
+body_class: journal-page
+---
+{% assign root = page.root %}
+{% assign publications = site.analyses | concat: site.actualites | sort: 'date' | reverse %}
+<main id="contenu">
+  <header class="journal-lead">
+    <div class="wrap journal-lead-inner">
+      <h1>Le journal</h1>
+      <p>Les analyses, les collaborations et la vie d’Agora Dau.</p>
+    </div>
+  </header>
+  <div class="wrap section journal-archive">
+  <div class="tools" data-list-tools hidden>
+    <div class="filters" role="group" aria-label="Type de publication">
+      <button type="button" aria-pressed="true" data-filter="all">Tout</button>
+      <button type="button" aria-pressed="false" data-filter="analyses">Articles et analyses</button>
+      {% if site.actualites.size > 0 %}<button type="button" aria-pressed="false" data-filter="actualites">Vie de l’asso</button>{% endif %}
+    </div>
+    <div class="search"><label for="journal-search">Rechercher</label><input type="search" id="journal-search" placeholder="Titre, sujet ou auteur"></div>
+  </div>
+  <p class="list-message" data-list-count aria-live="polite" hidden></p>
+  <ol class="journal-grid" data-entry-list>
+  {% for article in publications %}
+    <li data-entry="{{ article.collection }}" data-search="{{ article.author | escape }} {{ article.kicker | escape }} {{ article.tags_meta | join: ' ' | escape }}">
+      {% include entry.html item=article image=true summary=true heading="h2" eager=forloop.first sizes="(max-width: 580px) 90vw, (max-width: 980px) 46vw, 390px" %}
+    </li>
+  {% endfor %}
+  </ol>
+  <p class="empty-message" data-list-empty hidden>Aucune publication ne correspond. Essaie un autre mot ou change de filtre.</p>
+  </div>
+</main>

@@ -1,0 +1,24 @@
+mandat: "2025–26"
+bureau:
+  - {name: Rafael Gomes-Nascimento, role: Président}
+  - {name: Théo Guéry, role: Vice-président}
+  - {name: Mathilde Mazier, role: Trésorière}
+  - {name: Oriane Poitrimol, role: Secrétaire générale}
+  - {name: Lissa Perrin, role: Responsable éditoriale}
+poles:
+  - name: Rédaction
+    photo: /assets/photos/pole-redaction.jpg
+    alt: "Le pôle Rédaction, de gauche à droite : Charlotte, Yanis, Lissa, Raphaël et Eda-Nur."
+    source: 1
+  - name: Production média
+    photo: /assets/photos/pole-production.jpg
+    alt: "Le pôle Production, de gauche à droite : Léa, Rania, Majda et Hugo."
+    source: 2
+  - name: Communication & Partenariats
+    photo: /assets/photos/pole-communication.jpg
+    alt: "Le pôle Communication, de gauche à droite : Camille, Victoire, Léa et Lina."
+    source: 0
+  - name: Événementiel
+    photo: /assets/photos/pole-event.jpg
+    alt: "Le pôle Événementiel, de gauche à droite : Arthur, Mathéo, Gabriel et Anaëlle."
+    source: 3

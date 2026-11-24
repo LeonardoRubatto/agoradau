@@ -1,0 +1,11 @@
+<div class="programme-list">
+{% for format in site.data.texte-source.formats %}
+  <details class="programme">
+    <summary><span class="programme-kind">{{ format.kind | escape }}</span><strong>{{ format.name | escape }}</strong><span class="programme-status">{{ format.status | escape }}</span><i aria-hidden="true"></i></summary>
+    <div class="programme-body">
+      <p>{{ format.desc | escape }}</p>
+      {% if format.url %}<a class="simple-link" href="{{ root }}{{ format.url }}">{% if format.kind == 'Audio' %}Retrouver Ago’radio{% else %}Parcourir le journal{% endif %}</a>{% endif %}
+    </div>
+  </details>
+{% endfor %}
+</div>

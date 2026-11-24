@@ -1,0 +1,213 @@
+---
+permalink: /app/
+root: "../"
+---
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,maximum-scale=5"/>
+<title>Agora — l'app d'Agora Dau</title>
+<meta name="description" content="Agora, l’application d’Agora Dau pour lire le journal, écouter le podcast et garder les textes accessibles hors connexion."/>
+<link rel="canonical" href="https://agoradau.fr/app/"/>
+<meta name="theme-color" content="#F0EDE6" id="tc"/>
+<meta name="robots" content="index,follow"/>
+
+<script>
+  if (location.protocol !== "file:") {
+    const manifest = document.createElement("link");
+    manifest.rel = "manifest";
+    manifest.href = "./manifest.webmanifest";
+    document.head.append(manifest);
+  }
+</script>
+<link rel="icon" href="../favicon.ico" sizes="any"/>
+<link rel="icon" type="image/svg+xml" href="../favicon.svg"/>
+<link rel="icon" href="../favicon-32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="../favicon-16.png" sizes="16x16" type="image/png">
+<link rel="apple-touch-icon" href="./icon-192.png"/>
+<meta name="apple-mobile-web-app-capable" content="yes"/>
+<meta name="apple-mobile-web-app-status-bar-style" content="default"/>
+<meta name="apple-mobile-web-app-title" content="Agora"/>
+<meta name="mobile-web-app-capable" content="yes"/>
+
+<meta property="og:type" content="website"/>
+<meta property="og:locale" content="fr_FR">
+<meta property="og:site_name" content="Agora Dau"/>
+<meta property="og:title" content="Agora — l'app d'Agora Dau"/>
+<meta property="og:description" content="Lisez le journal d’Agora Dau, écoutez le podcast et retrouvez les textes hors connexion."/>
+<meta property="og:url" content="https://agoradau.fr/app/"/>
+<meta property="og:image" content="https://agoradau.fr/og-image.png"/>
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Logo et slogan d’Agora Dau sur fond crème">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Agora, l’application d’Agora Dau">
+<meta name="twitter:description" content="Les analyses et le podcast d’Agora Dau dans l’application.">
+<meta name="twitter:image" content="https://agoradau.fr/og-image.png">
+<link rel="stylesheet" href="./app.css?v=6"/>
+<script>
+  (function(){try{
+    var p=JSON.parse(localStorage.getItem('agora.theme')||'"system"');
+    var d=p==='dark'||(p==='system'&&matchMedia('(prefers-color-scheme:dark)').matches);
+    document.documentElement.setAttribute('data-theme',d?'dark':'light');
+    document.getElementById&&0;
+  }catch(e){}})();
+</script>
+</head>
+<body>
+
+<!-- ===== TOP BAR ===== -->
+<header class="topbar">
+  <a class="tb-brand" href="#/"><i></i>Agora<span>Dau</span></a>
+  <div class="tb-act">
+    <a class="app-site-link" href="../index.html">Site Agora Dau</a>
+    <button class="iconbtn" id="instTop" style="display:none" aria-label="Installer l'application"></button>
+    <button class="iconbtn" id="themeBtn" aria-label="Changer le thème"></button>
+  </div>
+</header>
+<button class="backbtn" id="backBtn" aria-label="Retour">
+  <svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></svg>
+</button>
+
+<div class="netpill" id="netpill"><i></i>Hors connexion — contenus enregistrés</div>
+
+<!-- ===== VIEWS ===== -->
+<main>
+  <section class="view on" id="v-home"></section>
+  <section class="view" id="v-analyses"></section>
+  <section class="view" id="v-ecouter"></section>
+  <section class="view" id="v-asso"></section>
+  <section class="view" id="v-propose"></section>
+  <section class="view reader" id="v-doc"></section>
+</main>
+
+<!-- ===== MINI PLAYER ===== -->
+<div class="mini" id="mini">
+  <span class="mini-bar" id="miniBar"></span>
+  <img class="mini-img" id="miniImg" src="./icon-192.png" alt=""/>
+  <button class="mini-b" type="button" id="miniExpand" aria-label="Ouvrir le lecteur">
+    <span class="mini-t" id="miniT"></span>
+    <span class="mini-s" id="miniS"></span>
+  </button>
+  <button class="mini-btn" id="miniPlay" aria-label="Lecture / pause"></button>
+  <button class="mini-btn ghost" id="miniClose" aria-label="Fermer le lecteur">
+    <svg viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></svg>
+  </button>
+</div>
+
+<!-- ===== FULL PLAYER ===== -->
+<dialog class="player" id="player" aria-label="Lecteur">
+  <div class="pl-top">
+    <span class="mono">En écoute</span>
+    <button class="pl-close" id="plClose" aria-label="Réduire" autofocus>
+      <svg viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+    </button>
+  </div>
+  <img class="pl-art" id="plArt" src="./icon-512.png" alt=""/>
+  <div class="pl-meta">
+    <p class="pl-ep" id="plEp"></p>
+    <h2 class="pl-t" id="plT"></h2>
+    <p class="pl-g" id="plG"></p>
+  </div>
+  <div class="pl-seek">
+    <div class="pl-track" id="plTrack" tabindex="0" role="slider" aria-label="Position dans le podcast" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+      <span class="pl-fill" id="plFill"></span>
+      <span class="pl-knob" id="plKnob"></span>
+    </div>
+    <div class="pl-times"><span id="plCur">0:00</span><span id="plDur">--:--</span></div>
+  </div>
+  <div class="pl-ctrl">
+    <button class="pl-b pl-sk" id="plBack" aria-label="Reculer de 15 secondes">
+      <svg viewBox="0 0 24 24"><path d="M11 4 7 8l4 4"/><path d="M7 8h6a7 7 0 1 1-7 7"/></svg><b>15</b>
+    </button>
+    <button class="pl-b pl-main" id="plPlay" aria-label="Lecture / pause"></button>
+    <button class="pl-b pl-sk" id="plFwd" aria-label="Avancer de 30 secondes">
+      <svg viewBox="0 0 24 24"><path d="m13 4 4 4-4 4"/><path d="M17 8h-6a7 7 0 1 0 7 7"/></svg><b>30</b>
+    </button>
+  </div>
+  <div class="pl-foot"><button class="pl-rate" id="plRate">× 1</button></div>
+  <div class="pl-links" id="plLinks"></div>
+</dialog>
+
+<!-- ===== TAB BAR ===== -->
+<nav class="tabbar">
+  <a class="tab on" data-v="home" href="#/">
+    <svg viewBox="0 0 24 24"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V21h14V9.5"/></svg><span>Une</span>
+  </a>
+  <a class="tab" data-v="analyses" href="#/analyses">
+    <svg viewBox="0 0 24 24"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/><path d="M9 13h6M9 17h4"/></svg><span>Analyses</span>
+  </a>
+  <a class="tab" data-v="ecouter" href="#/ecouter">
+    <svg viewBox="0 0 24 24"><path d="M12 3v18"/><path d="M8 7v10"/><path d="M16 7v10"/><path d="M4 10v4"/><path d="M20 10v4"/></svg><span>Écouter</span>
+  </a>
+  <a class="tab" data-v="asso" href="#/asso">
+    <svg viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg><span>L'asso</span>
+  </a>
+</nav>
+
+<footer class="app-footer"><a href="../mentions-legales/index.html">Mentions légales</a><a href="https://telaventis.fr/">Site par Telaventis</a></footer>
+
+<div class="toast" id="toast"></div>
+
+<dialog class="sheet" id="sheet" aria-label="Installer l’application">
+  <div class="sheet-c" id="sheetBody"></div>
+</dialog>
+
+<!-- ===== DATA (généré par Jekyll) ===== -->
+{% assign A = site.analyses | concat: site.actualites | sort: "date" | reverse %}
+{% assign P = site.podcasts | sort: "episode" | reverse %}
+<script id="agora-data" type="application/json">
+{
+"analyses": [
+{% for a in A %}{
+"slug": {% assign app_slug = a.relative_path | split: "/" | last | remove: ".md" %}{% if a.collection == 'actualites' %}{{ app_slug | prepend: 'actu-' | jsonify }}{% else %}{{ app_slug | jsonify }}{% endif %},
+"url": {{ a.url | remove_first: "/" | prepend: "../" | append: "index.html" | jsonify }},
+"title": {{ a.title | jsonify }},
+"title_display": {{ a.title_display | jsonify }},
+"dek": {{ a.dek | jsonify }},
+"kicker": {{ a.kicker | jsonify }},
+"author": {{ a.author | jsonify }},
+"date": {{ a.date | date: "%Y-%m-%d" | jsonify }},
+"date_display": {{ a.date_display | jsonify }},
+"reading_time": {{ a.reading_time | jsonify }},
+{% assign a_image = site.data.images[a.cover] %}
+"cover": {% if a.cover and a.cover != '/analyse-trump-omnipresence.jpg' %}{% assign a_original = a.cover | remove_first: "/" %}{{ a_image.fallback | default: a_original | prepend: "../" | jsonify }}{% else %}null{% endif %},
+"tags": {{ a.tags_meta | jsonify }},
+"closing": {{ a.closing | jsonify }},
+"closing_red": {{ a.closing_red | jsonify }},
+"sources": {{ a.sources | markdownify | jsonify | replace: "</", "<\/" }},
+"body": {{ a.body | markdownify | default: a.content | replace: 'src="/', 'src="../' | replace: 'href="/', 'href="../' | jsonify | replace: "</", "<\/" }}
+}{% unless forloop.last %},{% endunless %}
+{% endfor %}],
+"podcasts": [
+{% for p in P %}{
+"slug": {{ p.relative_path | split: "/" | last | remove: ".md" | jsonify }},
+"title": {{ p.title | jsonify }},
+"episode": {{ p.episode | default: 0 | jsonify }},
+"dek": {{ p.dek | jsonify }},
+"date": {{ p.date | date: "%Y-%m-%d" | jsonify }},
+"duration": {{ p.duration | jsonify }},
+"guests": {{ p.guests | jsonify }},
+{% assign podcast_cover = p.cover | default: '/media/agoradio.jpg' %}
+{% assign p_image = site.data.images[podcast_cover] %}
+{% assign p_original = podcast_cover | remove_first: "/" %}
+"cover": {{ p_image.fallback | default: p_original | prepend: "../" | jsonify }},
+"audio": {% if p.audio %}{{ p.audio | remove_first: "/" | prepend: "../" | jsonify }}{% else %}null{% endif %},
+"spotify": {{ p.spotify | jsonify }},
+"apple": {{ p.apple | jsonify }},
+"youtube": {{ p.youtube | jsonify }},
+"tags": {{ p.tags_meta | jsonify }},
+"body": {{ p.body | markdownify | default: p.content | jsonify | replace: "</", "<\/" }},
+"transcript": {{ p.transcript | markdownify | jsonify | replace: "</", "<\/" }},
+"excerpts": [{% for clip in p.excerpts %}{"title": {{ clip.title | jsonify | replace: "</", "<\/" }},"audio": {{ clip.audio | remove_first: "/" | prepend: "../" | jsonify }},"duration": {{ clip.duration | jsonify }},"transcript": {{ clip.transcript | markdownify | jsonify | replace: "</", "<\/" }}}{% unless forloop.last %},{% endunless %}{% endfor %}]
+}{% unless forloop.last %},{% endunless %}
+{% endfor %}]
+}
+</script>
+
+<script src="./app.js?v=6"></script>
+</body>
+</html>

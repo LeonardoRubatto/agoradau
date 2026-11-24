@@ -1,0 +1,17 @@
+- {path: /assets/photos/soiree-bar-2.jpg, category: rencontres, title: "Photo de groupe en soirée", alt: "Le groupe pose sous les arches éclairées en rouge"}
+- {path: /assets/photos/podcast-studio-1.jpg, category: studio, title: "Enregistrement d’Ago’radio", alt: "Une table avec des microphones et des personnes autour pendant l’enregistrement"}
+- {path: /assets/photos/terrasse-1.jpg, category: rencontres, title: "Sur la terrasse", alt: "Trois personnes discutent sous les guirlandes"}
+- {path: /assets/photos/babyfoot.jpg, category: rencontres, title: "Autour du baby-foot", alt: "Quatre personnes jouent au baby-foot"}
+- {path: /assets/photos/soiree-bar-1.jpg, category: rencontres, title: "Une soirée de l’association", alt: "Des membres prennent la pose à l’intérieur"}
+- {path: /assets/photos/podcast-selfie.jpg, category: studio, title: "L’équipe au micro", alt: "Trois personnes se sourient autour de la table du studio"}
+- {path: /assets/photos/sans-culottes.jpg, category: rencontres, title: "Devant Les Sans-Culottes", alt: "Le groupe pose devant la façade du bar Les Sans-Culottes"}
+- {path: /assets/photos/soiree-bleue.jpg, category: rencontres, title: "Soirée sous les lumières bleues", alt: "Des membres du groupe dans une salle éclairée en bleu"}
+- {path: /assets/photos/soiree-bar-6.jpg, category: rencontres, title: "Au bar", alt: "Deux personnes posent près du comptoir"}
+- {path: /assets/photos/soiree-bar-7.jpg, category: rencontres, title: "Photo à trois", alt: "Trois personnes posent devant une voûte en pierre"}
+- {path: /assets/photos/nuit.jpg, category: rencontres, title: "Dehors, de nuit", alt: "Deux personnes posent dehors de nuit"}
+- {path: /assets/photos/bureau-roles.jpg, category: equipe, title: "Fonctions du bureau", alt: "Photo de groupe du bureau avec les fonctions des cinq membres"}
+- {path: /assets/photos/podcast-studio-2.jpg, category: studio, title: "Autre plan du studio", alt: "La table d’enregistrement et les micros vus depuis la porte"}
+- {path: /assets/photos/soiree-bar-3.jpg, category: rencontres, title: "Trois membres en soirée", alt: "Trois personnes devant le comptoir éclairé de rouge"}
+- {path: /assets/photos/soiree-bar-4.jpg, category: rencontres, title: "Le groupe au comptoir", alt: "Plusieurs membres prennent la pose devant les arches du bar"}
+- {path: /assets/photos/soiree-bar-5.jpg, category: rencontres, title: "Une photo au flash", alt: "Deux personnes posent au milieu du bar"}
+- {path: /assets/photos/terrasse-2.jpg, category: rencontres, title: "Une discussion sur la terrasse", alt: "Trois personnes discutent debout sous les lumières de la terrasse"}

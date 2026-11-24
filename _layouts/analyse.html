@@ -1,0 +1,66 @@
+---
+layout: site
+---
+{% assign root = page.root | default: '../../' %}
+{% assign body = content %}
+{% if page.body %}{% assign body = page.body | markdownify %}{% endif %}
+{% if body contains '/analyse-nuit-filature-wright.jpg' %}
+  {% capture old_image %}<p><img src="/analyse-nuit-filature-wright.jpg" alt="Les filatures de coton d'Arkwright la nuit, peinture de Joseph Wright of Derby (vers 1782-83)" /></p>{% endcapture %}
+  {% capture old_image_html %}<p><img src="/analyse-nuit-filature-wright.jpg" alt="Les filatures de coton d'Arkwright la nuit, peinture de Joseph Wright of Derby (vers 1782-83)"></p>{% endcapture %}
+  {% capture figure %}<figure class="article-figure">{% include picture.html path="/analyse-nuit-filature-wright.jpg" alt="Les filatures de coton d’Arkwright la nuit, tableau de Joseph Wright of Derby" sizes="(max-width: 760px) 92vw, 700px" %}<figcaption>Les filatures de coton d’Arkwright la nuit, Joseph Wright of Derby (vers 1782–83).</figcaption></figure>{% endcapture %}
+  {% assign body = body | replace: old_image, figure | replace: old_image_html, figure %}
+{% endif %}
+{% assign local_src = root | prepend: 'src="' %}
+{% assign local_href = root | prepend: 'href="' %}
+{% assign rel_body = body | replace: 'src="/', local_src | replace: 'href="/', local_href %}
+<main id="contenu" class="wrap article-page">
+  <header class="article-mast">
+    <div class="article-intro">
+      <a class="simple-link" href="{{ root }}journal/index.html">Le journal</a>
+      <p class="entry-meta">{{ page.kicker | default: 'Vie de l’asso' | escape }}</p>
+      <h1>{{ page.title_display | default: page.title | escape }}</h1>
+      <p class="article-dek">{{ page.dek | escape }}</p>
+      {% if page.partner %}
+      <p class="collaboration">
+        {% if page.partner_logo %}<img src="{{ root }}{{ page.partner_logo | remove_first: '/' | escape }}" alt="" width="48" height="48">{% endif %}
+        En collaboration avec <strong>{{ page.partner | escape }}</strong>
+      </p>
+      {% endif %}
+      <p class="article-byline"><strong>{{ page.author | escape }}</strong><time datetime="{{ page.date | date: '%Y-%m-%d' }}">{% if page.date_display %}{{ page.date_display | escape }}{% else %}{{ page.date | date: "%d/%m/%Y" }}{% endif %}</time>{% if page.reading_time %}<span>{{ page.reading_time | escape }}</span>{% endif %}</p>
+    </div>
+    {% if page.cover and page.cover != '/analyse-trump-omnipresence.jpg' %}
+    <figure class="article-cover" data-cover="{{ page.cover | escape }}">
+      {% include picture.html path=page.cover alt=page.cover_alt sizes="(max-width: 760px) 82vw, 480px" eager=true %}
+      {% if page.cover_alt %}<figcaption>{{ page.cover_alt | escape }}</figcaption>{% endif %}
+    </figure>
+    {% endif %}
+  </header>
+
+  {% if page.stats and page.stats.size > 0 %}
+  <aside class="article-facts" aria-label="Chiffres clés">
+    {% for stat in page.stats %}<div><strong>{{ stat.n | escape }}</strong><span>{{ stat.l | escape }}</span>{% if stat.s %}<small>{{ stat.s | escape }}</small>{% endif %}</div>{% endfor %}
+  </aside>
+  {% endif %}
+
+  <div class="article-layout">
+    <nav class="article-toc" aria-label="Dans cet article" data-toc hidden><p>Dans cet article</p><progress aria-label="Progression dans l’article" max="100" value="0" data-reading-progress></progress><ul></ul></nav>
+    <article class="prose article-body" data-article-body>
+      {{ rel_body }}
+      {% if page.closing or page.closing_red %}<p class="article-closing">{% if page.closing and page.closing != '' %}{{ page.closing | escape }}{% endif %}{% if page.closing_red %}<strong>{{ page.closing_red | escape }}</strong>{% endif %}</p>{% endif %}
+      {% if page.sources and page.sources != '' %}<details class="disclosure sources"><summary>Sources et références</summary>{{ page.sources | markdownify | replace: 'href="/', local_href }}</details>{% endif %}
+    </article>
+  </div>
+
+  <div class="article-end">
+    <a class="ink-button" href="{{ root }}journal/index.html"><span>Retrouver toutes les publications</span></a>
+    <a class="simple-link" href="{{ root }}newsletter/index.html">Recevoir les prochaines parutions</a>
+  </div>
+  <aside class="article-callout">
+    <h2>Un sujet en tête&nbsp;?</h2>
+    <p>{{ site.data.texte-source.participation | escape }}</p>
+    <div class="join-links">
+      <a class="ink-button" href="{{ root }}app/index.html#/proposer"><span>Proposer à la rédaction</span></a>
+      <a class="simple-link" href="{{ site.data.site.instagram }}">Écrire sur Instagram</a>
+    </div>
+  </aside>
+</main>

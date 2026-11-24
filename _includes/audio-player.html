@@ -1,0 +1,5 @@
+{% assign audio_file = include.path | remove_first: '/' %}
+<div class="audio-player">
+  <audio controls preload="none" aria-label="{{ include.title | escape }}" src="{{ root }}{{ audio_file | escape }}"></audio>
+  <a class="simple-link download" href="{{ root }}{{ audio_file | escape }}" download>Télécharger l’audio</a>
+</div>

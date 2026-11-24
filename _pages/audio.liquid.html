@@ -1,0 +1,38 @@
+---
+layout: site
+title: "Ago’radio"
+description: "Écoutez les épisodes et extraits d’Ago’radio, le podcast du média étudiant Agora Dau."
+permalink: /ecouter/
+root: "../"
+section: audio
+body_class: radio-page
+---
+{% assign root = page.root %}
+{% assign episodes = site.podcasts | sort: "date" | reverse %}
+{% assign latest = episodes | first %}
+<main id="contenu">
+  <header class="radio-board">
+    <div class="wrap radio-mast">
+      <div class="radio-name"><h1>Ago’<span>radio</span></h1><a class="simple-link" href="#episodes">Épisodes et extraits</a></div>
+      <figure class="radio-frame">
+        {% include picture.html path="/assets/photos/podcast-selfie.jpg" alt="Trois personnes réunies devant un micro au studio d’Ago’radio" sizes="(max-width: 760px) 90vw, 620px" eager=true %}
+        <figcaption>L’équipe d’Ago’radio au studio</figcaption>
+      </figure>
+    </div>
+  </header>
+  <div class="wrap radio-intro">
+    <p>{{ site.data.texte-source.radio | escape }}</p>
+    <a class="ink-button" href="../app/index.html#/ecouter"><span>Écouter dans l’application</span></a>
+  </div>
+  <section id="episodes" class="wrap section episodes" aria-labelledby="episodes-titre">
+    <div class="edition-header"><h2 id="episodes-titre">Les épisodes</h2></div>
+    {% for episode in episodes %}
+      {% include episode.html item=episode %}
+    {% else %}
+      <p>Les épisodes seront publiés ici.</p>
+    {% endfor %}
+  </section>
+  <div class="radio-outro">
+    <div class="wrap participation"><div><h2>Une voix à faire entendre&nbsp;?</h2><p>Propose un sujet de podcast ou une personne à inviter.</p></div><a class="ink-button" href="../app/index.html#/proposer/podcast"><span>Proposer un podcast</span></a></div>
+  </div>
+</main>

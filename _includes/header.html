@@ -1,0 +1,10 @@
+<a class="skip-link" href="#contenu">Aller au contenu</a>
+<header class="site-header">
+  <nav class="wrap masthead" aria-label="Navigation principale">
+    <a class="masthead-journal" href="{{ root }}journal/index.html"{% if page.section == 'journal' %} aria-current="page"{% endif %}>Journal</a>
+    <a class="masthead-radio" href="{{ root }}ecouter/index.html"{% if page.section == 'audio' %} aria-current="page"{% endif %}>Ago’radio</a>
+    <a class="wordmark" href="{{ root }}index.html" aria-label="Agora Dau, accueil"{% if page.home %} aria-current="page"{% endif %}><img src="{{ root }}assets/brand/logo-lockup.webp" alt="" width="412" height="200"></a>
+    <a class="masthead-association" href="{{ root }}association/index.html"{% if page.section == 'asso' %} aria-current="page"{% endif %}>L’asso</a>
+    <a class="masthead-participer" href="{{ root }}association/index.html#participer">Participer</a>
+  </nav>
+</header>

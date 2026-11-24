@@ -1,0 +1,15 @@
+{% assign deck_episode = include.item %}
+{% assign deck_path = deck_episode.audio | remove_first: '/' %}
+{% assign waveform = site.data.waveforms[deck_episode.audio] %}
+<div class="deck" data-deck>
+  <audio controls preload="none" aria-label="{{ deck_episode.title | escape }}" src="{{ root }}{{ deck_path }}"></audio>
+  <div class="deck-interface" data-deck-interface hidden>
+    <button type="button" class="deck-button" data-deck-play aria-label="Lire l’épisode"><i aria-hidden="true"></i></button>
+    <div class="deck-signal">
+      <canvas class="deck-wave" aria-hidden="true" data-wave="{{ waveform | join: ',' }}"></canvas>
+      <input type="range" min="0" max="1000" step="1" value="0" data-deck-seek aria-label="Position dans l’épisode" disabled>
+      <div class="deck-times" aria-hidden="true"><span data-deck-time>0:00</span><span data-deck-duration>{{ deck_episode.duration | escape }}</span></div>
+    </div>
+    <p data-deck-status role="status" hidden>La lecture n’a pas démarré. Tu peux utiliser le lecteur de la page d’écoute.</p>
+  </div>
+</div>
