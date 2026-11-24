@@ -78,7 +78,10 @@ async function checkMedia(value, audio = false) {
   if (!valid.test(value)) throw new Error("Chemin de média invalide : " + value);
   const item = await stat(at(value.slice(1))).catch(() => null);
   if (!item?.isFile() || item.size === 0) throw new Error("Média manquant : " + value);
-  if (audio && item.size >= 100 * 1024 ** 2) throw new Error("Audio trop volumineux pour GitHub : " + value);
+  const maxAssetBytes = 25 * 1024 ** 2;
+  if (item.size > maxAssetBytes) {
+    throw new Error("Ce média dépasse la limite de 25 Mio par fichier sur Cloudflare Pages : " + value);
+  }
 }
 
 async function validateContent(analyses, news, podcasts) {

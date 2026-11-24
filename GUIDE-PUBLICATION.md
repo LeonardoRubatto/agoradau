@@ -14,7 +14,7 @@ Utilise **Actualités** dans Pages CMS ou ajoute un fichier dans `_actualites/`.
 
 ## Épisode et extraits audio
 
-1. Ajoute le fichier à **Audio**, ou dépose-le dans `media/audio/`. Le MP3 est préférable pour la compatibilité. M4A, WAV, OGG et OGA sont également acceptés. Le nom doit être simple, sans espaces ni accents. Vise moins de 50 Mo et reste sous la limite GitHub de 100 Mio par fichier.
+1. Ajoute le fichier à **Audio**, ou dépose-le dans `media/audio/`. Le MP3 est préférable pour la compatibilité. M4A, WAV, OGG et OGA sont également acceptés. Le nom doit être simple, sans espaces ni accents. Cloudflare Pages accepte jusqu’à 25 Mio par fichier. Vise moins de 24 Mio par épisode ou extrait.
 2. Dans **Podcasts**, renseigne le titre, le numéro unique, la date, le chapô et le fichier. Ajoute les invité·es, la durée et les notes selon les éléments disponibles.
 3. Pour un extrait, ouvre le même épisode puis ajoute un élément dans **Extraits** avec son titre et son fichier. Durée et transcription sont facultatives. Chaque extrait dispose de son propre lecteur.
 
