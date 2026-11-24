@@ -173,7 +173,7 @@
   align-items: start;
   gap: clamp(1.5rem, 6vw, 6rem);
 }
-.edition-cover { position: sticky; top: 1.5rem; align-self: start; }
+.edition-cover { position: sticky; top: calc(var(--masthead-height) + 1.5rem); align-self: start; }
 .edition-poster-wrap { position: relative; isolation: isolate; }
 .edition-poster {
   width: 100%;
@@ -267,7 +267,7 @@
   .stage-media { width: 68%; right: 0; }
 }
 @media (max-width: 760px) {
-  .on-air { min-block-size: calc(100svh - var(--mobile-masthead)); display: flex; flex-direction: column; }
+  .on-air { min-block-size: calc(100svh - var(--masthead-height)); display: flex; flex-direction: column; }
   .stage {
     width: 100%;
     min-height: 0;
@@ -324,7 +324,7 @@
 }
 
 .home-programme { display: grid; grid-template-columns: minmax(0,.73fr) minmax(0,1.27fr); align-items: start; gap: clamp(1.25rem,5vw,5rem); }
-.home-programme > h2 { position: sticky; top: 2rem; max-width: 5ch; font-size: clamp(3.8rem, 8vw, 8rem); line-height: .84; }
+.home-programme > h2 { position: sticky; top: calc(var(--masthead-height) + 2rem); max-width: 5ch; font-size: clamp(3.8rem, 8vw, 8rem); line-height: .84; }
 .format-index { list-style: none; padding: 0; margin: 0; border-block-start: 2px solid var(--ink); }
 .format-entry {
   display: grid;
@@ -342,7 +342,7 @@
 .format-link { color: var(--red-ink); display: inline-flex; align-items: center; min-height: 44px; text-underline-offset: .22em; }
 @media (max-width: 760px) {
   .home-programme { display: block; }
-  .home-programme > h2 { top: 0; z-index: 1; max-width: none; padding-block: .65rem .8rem; background: var(--paper); border-bottom: 2px solid var(--ink); font-size: clamp(2.65rem, 11vw, 5.5rem); }
+  .home-programme > h2 { top: var(--masthead-height); z-index: 1; max-width: none; padding-block: .65rem .8rem; background: var(--paper); border-bottom: 2px solid var(--ink); font-size: clamp(2.65rem, 11vw, 5.5rem); }
   .format-index { border-block-start: 0; }
   .format-entry { grid-template-columns: minmax(0,1fr); gap: .45rem; }
   .format-entry h3 { font-size: clamp(1.85rem, 7vw, 2.8rem); }

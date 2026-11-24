@@ -212,7 +212,7 @@
   .article-layout:has(.article-toc:not([hidden])) { display: block; max-width: 45rem; margin-inline: auto; }
   .article-toc {
     position: sticky;
-    top: 0;
+    top: var(--masthead-height);
     z-index: 2;
     overflow: visible;
     margin: 0 0 .9rem;
