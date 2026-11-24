@@ -18,6 +18,8 @@ Pour servir un aperçu HTTP local, lance `python -m http.server 8765 --bind 127.
 
 Cloudflare Pages sert les fichiers HTML générés à la racine de `main`. Tant que le projet Cloudflare est configuré sans commande de build, exécute `npm run build` après chaque modification du contenu ou des modèles et ajoute les pages générées au commit. La limite par fichier est de 25 Mio.
 
+Cloudflare Pages exécute une fonction sur `/media/audio/*` pour répondre aux requêtes de lecture partielle et permettre d’avancer dans un épisode.
+
 Le dépôt reste compatible avec Jekyll. Les HTML portables générés sont exclus du build Jekyll pour laisser les modèles produire les mêmes adresses depuis les sources. Pour vérifier le rendu Jekyll sur un environnement Ruby compatible, utilise le Gemfile et `bundle exec jekyll build`.
 
 La refonte est une livraison locale. Avant la mise en ligne, le bureau doit confirmer les autorisations des personnes visibles sur les photos, compléter les mentions légales signalées sur la page et vérifier la réception FormSubmit avec son adresse.
