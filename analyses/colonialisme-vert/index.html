@@ -43,6 +43,7 @@
   <link rel="icon" href="../../favicon-32.png" sizes="32x32" type="image/png">
   <link rel="icon" href="../../favicon-16.png" sizes="16x16" type="image/png">
   <link rel="apple-touch-icon" href="../../apple-touch-icon.png">
+  <link rel="preload" href="../../assets/fonts/barlow-condensed-800.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="../../assets/css/site.css">
   <link rel="stylesheet" href="../../assets/css/editions.css">
   <script src="../../assets/js/site.js" defer></script>
@@ -56,14 +57,36 @@
 
 <body class="">
 <a class="skip-link" href="#contenu">Aller au contenu</a>
+
+
+
 <header class="site-header">
   <nav class="wrap masthead" aria-label="Navigation principale">
-    <a class="masthead-journal" href="../../journal/index.html" aria-current="page">Journal</a>
-    <a class="masthead-radio" href="../../ecouter/index.html">Ago’radio</a>
-    <a class="wordmark" href="../../index.html" aria-label="Agora Dau, accueil"><img src="../../assets/brand/logo-lockup.webp" alt="" width="412" height="200"></a>
-    <a class="masthead-association" href="../../association/index.html">L’asso</a>
-    <a class="masthead-participer" href="../../association/index.html#participer">Participer</a>
+    
+  <a href="../../journal/index.html" aria-current="page">Journal</a>
+  <a href="../../ecouter/index.html">Ago’radio</a>
+
+  <a class="wordmark" href="../../index.html" aria-label="Agora Dau, accueil"><img src="../../assets/brand/logo-lockup.webp" alt="" width="412" height="200"></a>
+
+  <a href="../../association/index.html">L’asso</a>
+  <a href="../../association/index.html#participer">Participer</a>
+
   </nav>
+  <div class="wrap masthead-mobile">
+    
+  <a class="wordmark" href="../../index.html" aria-label="Agora Dau, accueil"><img src="../../assets/brand/logo-lockup.webp" alt="" width="412" height="200"></a>
+
+    <details class="masthead-menu" data-masthead-menu>
+      <summary>Sommaire<span aria-hidden="true"></span></summary>
+      <nav aria-label="Navigation principale">
+  <a href="../../journal/index.html" aria-current="page">Journal</a>
+  <a href="../../ecouter/index.html">Ago’radio</a>
+
+  <a href="../../association/index.html">L’asso</a>
+  <a href="../../association/index.html#participer">Participer</a>
+</nav>
+    </details>
+  </div>
 </header>
 
 
@@ -103,7 +126,12 @@
   
 
   <div class="article-layout">
-    <nav class="article-toc" aria-label="Dans cet article" data-toc hidden><p>Dans cet article</p><progress aria-label="Progression dans l’article" max="100" value="0" data-reading-progress></progress><ul></ul></nav>
+    <nav class="article-toc" aria-label="Dans cet article" data-toc hidden>
+      <p class="article-toc-title">Dans cet article</p>
+      <button type="button" class="article-toc-toggle" aria-expanded="false" aria-controls="article-toc-list" data-toc-toggle>Dans cet article</button>
+      <progress aria-label="Progression dans l’article" max="100" value="0" data-reading-progress></progress>
+      <ul id="article-toc-list"></ul>
+    </nav>
     <article class="prose article-body" data-article-body>
       <h2 id="la-face-cachée-de-lécologie">La face cachée de l'écologie</h2>
 <p>Sanctuariser la nature vierge ? Assurément. Expulser les personnes susceptibles de la dégrader ? Pourquoi pas, si c'est au nom de la préservation des espaces sauvages. C'est ce que l'on pourrait raisonnablement se dire. Après tout, cela relève d'une évidence morale que c'est l'humain, lui et nul autre, qui est l'auteur de cet anthropocène et qui devrait donc se retirer pour laisser la nature respirer.</p>

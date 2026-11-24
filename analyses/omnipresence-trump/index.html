@@ -37,6 +37,7 @@
   <link rel="icon" href="../../favicon-32.png" sizes="32x32" type="image/png">
   <link rel="icon" href="../../favicon-16.png" sizes="16x16" type="image/png">
   <link rel="apple-touch-icon" href="../../apple-touch-icon.png">
+  <link rel="preload" href="../../assets/fonts/barlow-condensed-800.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="../../assets/css/site.css">
   <link rel="stylesheet" href="../../assets/css/editions.css">
   <script src="../../assets/js/site.js" defer></script>
@@ -50,14 +51,36 @@
 
 <body class="">
 <a class="skip-link" href="#contenu">Aller au contenu</a>
+
+
+
 <header class="site-header">
   <nav class="wrap masthead" aria-label="Navigation principale">
-    <a class="masthead-journal" href="../../journal/index.html" aria-current="page">Journal</a>
-    <a class="masthead-radio" href="../../ecouter/index.html">Ago’radio</a>
-    <a class="wordmark" href="../../index.html" aria-label="Agora Dau, accueil"><img src="../../assets/brand/logo-lockup.webp" alt="" width="412" height="200"></a>
-    <a class="masthead-association" href="../../association/index.html">L’asso</a>
-    <a class="masthead-participer" href="../../association/index.html#participer">Participer</a>
+    
+  <a href="../../journal/index.html" aria-current="page">Journal</a>
+  <a href="../../ecouter/index.html">Ago’radio</a>
+
+  <a class="wordmark" href="../../index.html" aria-label="Agora Dau, accueil"><img src="../../assets/brand/logo-lockup.webp" alt="" width="412" height="200"></a>
+
+  <a href="../../association/index.html">L’asso</a>
+  <a href="../../association/index.html#participer">Participer</a>
+
   </nav>
+  <div class="wrap masthead-mobile">
+    
+  <a class="wordmark" href="../../index.html" aria-label="Agora Dau, accueil"><img src="../../assets/brand/logo-lockup.webp" alt="" width="412" height="200"></a>
+
+    <details class="masthead-menu" data-masthead-menu>
+      <summary>Sommaire<span aria-hidden="true"></span></summary>
+      <nav aria-label="Navigation principale">
+  <a href="../../journal/index.html" aria-current="page">Journal</a>
+  <a href="../../ecouter/index.html">Ago’radio</a>
+
+  <a href="../../association/index.html">L’asso</a>
+  <a href="../../association/index.html#participer">Participer</a>
+</nav>
+    </details>
+  </div>
 </header>
 
 
@@ -83,7 +106,12 @@
   
 
   <div class="article-layout">
-    <nav class="article-toc" aria-label="Dans cet article" data-toc hidden><p>Dans cet article</p><progress aria-label="Progression dans l’article" max="100" value="0" data-reading-progress></progress><ul></ul></nav>
+    <nav class="article-toc" aria-label="Dans cet article" data-toc hidden>
+      <p class="article-toc-title">Dans cet article</p>
+      <button type="button" class="article-toc-toggle" aria-expanded="false" aria-controls="article-toc-list" data-toc-toggle>Dans cet article</button>
+      <progress aria-label="Progression dans l’article" max="100" value="0" data-reading-progress></progress>
+      <ul id="article-toc-list"></ul>
+    </nav>
     <article class="prose article-body" data-article-body>
       <p>C’est en grande pompe que les Démocrates ont accueilli la nouvelle de leur victoire aux élections de mi-mandat américaines, les midterms. Ce vote, qui était censé montrer la confiance des Américains envers le gouvernement de Donald Trump,a fait perdre aux républicains la majorité dans les deux chambres du Congrès américain; la Chambre des représentants et le Sénat. Cette victoire du parti démocrate est d’autant plus spectaculaire, témoignant d’une réelle volonté des Américains d’affaiblir l’administration Trump, que des États historiquement considérés comme républicains et conservateurs comme le Texas ou le Kansas se sont teintés en bleu , couleur du parti démocrate.</p>
 <p>On assiste donc à une réelle remise en cause des politiques menées par le président américain. Entre ingérence dans le monde entier, et volonté de faire taire les contestations, on assiste depuis la cérémonie d’investiture du 20 janvier 2025, à une véritable omniprésence de Trump, bien trop souvent accompagnée de violence, que ce soit au sein même du territoire américain ou à l’international.</p>

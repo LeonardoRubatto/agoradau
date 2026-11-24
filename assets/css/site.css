@@ -35,6 +35,7 @@
   --normal: 240ms;
   --gutter: clamp(1.25rem, 4.2vw, 4.5rem);
   --max: 80rem;
+  --mobile-masthead: 3.625rem;
   --body: "Source Sans 3", system-ui, sans-serif;
   --display: "Barlow Condensed", "Arial Narrow", sans-serif;
 }
@@ -97,6 +98,7 @@ figcaption { color: var(--soft-ink); font-size: .875rem; }
   text-decoration-color: var(--red-ink);
 }
 .wordmark img { width: 4.7rem; height: auto; }
+.masthead-mobile { display: none; }
 
 .ink-button {
   position: relative;
@@ -359,9 +361,17 @@ body:has(dialog[open]) { overflow: hidden; }
   .journal-grid { gap: 1.5rem; }
 }
 @media (max-width: 760px) {
-  .masthead { width: calc(100% - 1.25rem); min-height: 3.25rem; grid-template-columns: repeat(5, auto); column-gap: .2rem; }
-  .masthead a { font-size: .875rem; }
-  .wordmark img { width: 3.25rem; }
+  .masthead { display: none; }
+  .masthead-mobile { display: flex; min-height: var(--mobile-masthead); align-items: center; justify-content: space-between; }
+  .masthead-mobile .wordmark { min-height: 44px; display: grid; align-items: center; }
+  .masthead-mobile .wordmark img { width: 4rem; }
+  .masthead-menu summary { display: flex; align-items: center; gap: .65rem; min-height: 44px; cursor: pointer; font-size: 1rem; font-weight: 700; }
+  .masthead-menu summary::-webkit-details-marker { display: none; }
+  .masthead-menu summary span { display: block; width: 1rem; height: .5rem; border-block: 1px solid; }
+  .masthead-menu[open] summary span { border-block-end-color: var(--red-ink); }
+  .masthead-menu nav { position: absolute; inset: 100% 0 auto; background: var(--paper); border-block: 1px solid var(--ink); padding: .4rem var(--gutter) 1rem; }
+  .masthead-menu nav a { display: flex; align-items: center; min-height: 52px; border-bottom: 1px solid var(--rule); font: 700 2rem/1 var(--display); text-decoration: none; }
+  .masthead-menu nav a:is(:hover, :focus-visible, [aria-current]) { color: var(--red-ink); text-decoration: underline; }
   .section-heading { align-items: start; }
   .life-home, .audio-hero, .asso-lead, .bureau, .article-mast { grid-template-columns: minmax(0, 1fr); }
   .life-home { gap: 1.25rem; }

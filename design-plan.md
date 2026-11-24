@@ -37,6 +37,8 @@ Reference: reference/hugotoro-com | lesson: tenir une ouverture très typographi
 Reference: reference/insidy-com | lesson: travailler la rupture de surface et la taille des visuels selon le chapitre | fit: séparer lecture, écoute et participation | avoid: arches, lilas et diaporama automatique
 Reference: reference/mbsdesign-fr | lesson: aligner les départs des images et préserver le rapport des affiches | fit: coupes littérales des couvertures | avoid: densité marchande et commandes flottantes
 Reference: reference/helenelacombe-co | lesson: montrer les rubriques sous des intitulés courts à côté du signe de marque | fit: supprimer l’encadrement et le bouton générique de l’en-tête | avoid: menus mobiles cachés et page sans texte
+Reference: reference/thelighthouse-ae | lesson: la photographie bord à bord porte le titre sur mobile | fit: photo de soirée et titrage en pied d’image | avoid: maintenir le visuel au-delà du premier écran
+Reference: reference/isanaparis-com | lesson: la photographie signale un changement de sujet | fit: trois plans issus de la rédaction et de l’association | avoid: reproduire la navigation par affiches et son empilement mobile
 Reference: reference/uchronia-fr | lesson: associer le fond d’une présentation à l’image réellement affichée | fit: tons des couvertures et aplats proches des prises de vue du studio | avoid: écran d’attente et fonds flous au défilement
 
 ## Type
@@ -60,5 +62,4 @@ Grid: 4, 8, 12, 16, 20, 24, 32, 40, 48, 56, 64, 80, 96, 120.
 - example section-transitions — dévoilement des images sous le plateau, sans retard pour les ancres et le focus.
 - example text-over-image — contraste local sous le titrage. Sur téléphone, le titre s’imprime au pied de la photographie et la légende passe dans le flux.
 
-Reference: The Lighthouse — une photographie bord à bord porte le titre de l’accueil mobile. ISANA Paris — la photographie rythme les changements de sujet. Le film d’Agora Dau alterne portrait de soirée sous les néons bleus, illustration d’un article et photo d’équipe. Les trois rubriques partagent une ligne typographique. Les formats de la rédaction prennent la forme d’un sommaire ouvert, en regard du titre sur ordinateur.
-
+Le film d’Agora Dau alterne portrait de soirée sous les néons bleus, illustration d’un article et photo d’équipe. Le Sommaire mobile se déplie dans l’en-tête. Dans « Au programme », le titre accompagne la liste jusqu’à la fin de la section, puis s’efface avec elle.

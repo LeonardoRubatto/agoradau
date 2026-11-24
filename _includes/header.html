@@ -1,10 +1,24 @@
 <a class="skip-link" href="#contenu">Aller au contenu</a>
+{% capture journal_links %}
+  <a href="{{ root }}journal/index.html"{% if page.section == 'journal' %} aria-current="page"{% endif %}>Journal</a>
+  <a href="{{ root }}ecouter/index.html"{% if page.section == 'audio' %} aria-current="page"{% endif %}>Ago’radio</a>
+{% endcapture %}
+{% capture association_links %}
+  <a href="{{ root }}association/index.html"{% if page.section == 'asso' %} aria-current="page"{% endif %}>L’asso</a>
+  <a href="{{ root }}association/index.html#participer">Participer</a>
+{% endcapture %}
+{% capture wordmark %}
+  <a class="wordmark" href="{{ root }}index.html" aria-label="Agora Dau, accueil"{% if page.home %} aria-current="page"{% endif %}><img src="{{ root }}assets/brand/logo-lockup.webp" alt="" width="412" height="200"></a>
+{% endcapture %}
 <header class="site-header">
   <nav class="wrap masthead" aria-label="Navigation principale">
-    <a class="masthead-journal" href="{{ root }}journal/index.html"{% if page.section == 'journal' %} aria-current="page"{% endif %}>Journal</a>
-    <a class="masthead-radio" href="{{ root }}ecouter/index.html"{% if page.section == 'audio' %} aria-current="page"{% endif %}>Ago’radio</a>
-    <a class="wordmark" href="{{ root }}index.html" aria-label="Agora Dau, accueil"{% if page.home %} aria-current="page"{% endif %}><img src="{{ root }}assets/brand/logo-lockup.webp" alt="" width="412" height="200"></a>
-    <a class="masthead-association" href="{{ root }}association/index.html"{% if page.section == 'asso' %} aria-current="page"{% endif %}>L’asso</a>
-    <a class="masthead-participer" href="{{ root }}association/index.html#participer">Participer</a>
+    {{ journal_links }}{{ wordmark }}{{ association_links }}
   </nav>
+  <div class="wrap masthead-mobile">
+    {{ wordmark }}
+    <details class="masthead-menu" data-masthead-menu>
+      <summary>Sommaire<span aria-hidden="true"></span></summary>
+      <nav aria-label="Navigation principale">{{ journal_links }}{{ association_links }}</nav>
+    </details>
+  </div>
 </header>

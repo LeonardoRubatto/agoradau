@@ -23,7 +23,7 @@
     let hovered = false;
     let clock;
 
-    function select(key) {
+    function select(key, animate = true) {
       const next = figures.find((figure) => figure.dataset.stageScene === key.dataset.stageKey);
       if (!next || next === current) return;
       wipe?.cancel();
@@ -42,7 +42,7 @@
       action.href = key.dataset.href;
       for (const item of keys) item.setAttribute("aria-pressed", String(item === key));
 
-      if (reduced.matches || !next.animate) {
+      if (!animate || reduced.matches || !next.animate) {
         previous.hidden = true;
         return;
       }
@@ -117,6 +117,7 @@
       if (player?.paused && button) button.click();
     });
     one("[data-stage-fallback]", stage).hidden = true;
+    if (compactStage.matches) select(keys[0], false);
     controls.hidden = false;
     rotation.hidden = false;
     schedule();

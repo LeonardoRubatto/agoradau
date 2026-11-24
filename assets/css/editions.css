@@ -120,7 +120,10 @@
 
 .article-mast { align-items: end; padding-block: .75rem 2rem; }
 .article-mast .article-intro { padding-bottom: .85rem; }
-.article-intro h1 { font-size: clamp(3.15rem, 7.4vw, 7.7rem); }
+.article-intro h1 { font-size: clamp(3.15rem, 7.4vw, 7.7rem); overflow-wrap: anywhere; hyphens: auto; }
+@media (max-width: 760px) {
+  .article-intro h1 { font-size: clamp(2.45rem, 10vw, 4.5rem); line-height: .98; text-wrap: balance; }
+}
 .article-cover {
   background: #d9d0c6;
   padding: clamp(.75rem, 2vw, 1.8rem);
@@ -140,6 +143,7 @@
 .article-toc a[aria-current="location"]::before { background: var(--red-ink); }
 .article-toc a:hover { text-decoration: underline; }
 .article-toc progress { width: 100%; height: .3rem; accent-color: var(--red-ink); }
+.article-toc-toggle { display: none; }
 .article-end { padding-block: 1.75rem 0; }
 .article-callout { background: #e7ddd3; margin-top: clamp(2.2rem,5vw,4rem); padding: clamp(1.25rem,4vw,3.2rem); }
 .article-callout h2 { font-size: clamp(2.4rem,5vw,4.8rem); }
@@ -205,7 +209,37 @@
   .association-page .poles-grid { gap: 1.25rem; }
   .association-page .poles-grid article:nth-child(2n) { margin-top: 0; }
   .article-mast { padding-top: 0; }
-  .article-toc { margin-top: .25rem; }
+  .article-layout:has(.article-toc:not([hidden])) { display: block; max-width: 45rem; margin-inline: auto; }
+  .article-toc {
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    overflow: visible;
+    margin: 0 0 .9rem;
+    padding: 0 0 .45rem;
+    border: 0;
+    background: var(--paper);
+  }
+  .article-toc-title { display: none; }
+  .article-toc-toggle {
+    display: flex;
+    width: 100%;
+    min-height: 44px;
+    gap: .5rem;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 .3rem 0 0;
+    background: none;
+    border: 0;
+    font-weight: 700;
+    text-align: left;
+  }
+  .article-toc-toggle::after { content: ""; width: .5rem; height: .5rem; border: solid currentColor; border-width: 0 1.5px 1.5px 0; transform: rotate(45deg); }
+  .article-toc-toggle[aria-expanded="true"]::after { transform: rotate(225deg); }
+  .article-toc progress { display: block; }
+  .article-toc ul { max-height: min(40svh, 20rem); overflow-y: auto; padding-inline: .85rem .25rem; }
+  .article-toc-toggle[aria-expanded="false"] ~ ul { display: none; }
+  .article-layout:has(.article-toc:not([hidden])) .prose h2[id] { scroll-margin-top: 4.4rem; }
   .article-cover { width: 100%; }
   .charter-reading aside { max-width: none; }
 }

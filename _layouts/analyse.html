@@ -43,7 +43,12 @@ layout: site
   {% endif %}
 
   <div class="article-layout">
-    <nav class="article-toc" aria-label="Dans cet article" data-toc hidden><p>Dans cet article</p><progress aria-label="Progression dans l’article" max="100" value="0" data-reading-progress></progress><ul></ul></nav>
+    <nav class="article-toc" aria-label="Dans cet article" data-toc hidden>
+      <p class="article-toc-title">Dans cet article</p>
+      <button type="button" class="article-toc-toggle" aria-expanded="false" aria-controls="article-toc-list" data-toc-toggle>Dans cet article</button>
+      <progress aria-label="Progression dans l’article" max="100" value="0" data-reading-progress></progress>
+      <ul id="article-toc-list"></ul>
+    </nav>
     <article class="prose article-body" data-article-body>
       {{ rel_body }}
       {% if page.closing or page.closing_red %}<p class="article-closing">{% if page.closing and page.closing != '' %}{{ page.closing | escape }}{% endif %}{% if page.closing_red %}<strong>{{ page.closing_red | escape }}</strong>{% endif %}</p>{% endif %}

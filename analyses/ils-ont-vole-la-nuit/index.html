@@ -43,6 +43,7 @@
   <link rel="icon" href="../../favicon-32.png" sizes="32x32" type="image/png">
   <link rel="icon" href="../../favicon-16.png" sizes="16x16" type="image/png">
   <link rel="apple-touch-icon" href="../../apple-touch-icon.png">
+  <link rel="preload" href="../../assets/fonts/barlow-condensed-800.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="../../assets/css/site.css">
   <link rel="stylesheet" href="../../assets/css/editions.css">
   <script src="../../assets/js/site.js" defer></script>
@@ -56,14 +57,36 @@
 
 <body class="">
 <a class="skip-link" href="#contenu">Aller au contenu</a>
+
+
+
 <header class="site-header">
   <nav class="wrap masthead" aria-label="Navigation principale">
-    <a class="masthead-journal" href="../../journal/index.html" aria-current="page">Journal</a>
-    <a class="masthead-radio" href="../../ecouter/index.html">Ago’radio</a>
-    <a class="wordmark" href="../../index.html" aria-label="Agora Dau, accueil"><img src="../../assets/brand/logo-lockup.webp" alt="" width="412" height="200"></a>
-    <a class="masthead-association" href="../../association/index.html">L’asso</a>
-    <a class="masthead-participer" href="../../association/index.html#participer">Participer</a>
+    
+  <a href="../../journal/index.html" aria-current="page">Journal</a>
+  <a href="../../ecouter/index.html">Ago’radio</a>
+
+  <a class="wordmark" href="../../index.html" aria-label="Agora Dau, accueil"><img src="../../assets/brand/logo-lockup.webp" alt="" width="412" height="200"></a>
+
+  <a href="../../association/index.html">L’asso</a>
+  <a href="../../association/index.html#participer">Participer</a>
+
   </nav>
+  <div class="wrap masthead-mobile">
+    
+  <a class="wordmark" href="../../index.html" aria-label="Agora Dau, accueil"><img src="../../assets/brand/logo-lockup.webp" alt="" width="412" height="200"></a>
+
+    <details class="masthead-menu" data-masthead-menu>
+      <summary>Sommaire<span aria-hidden="true"></span></summary>
+      <nav aria-label="Navigation principale">
+  <a href="../../journal/index.html" aria-current="page">Journal</a>
+  <a href="../../ecouter/index.html">Ago’radio</a>
+
+  <a href="../../association/index.html">L’asso</a>
+  <a href="../../association/index.html#participer">Participer</a>
+</nav>
+    </details>
+  </div>
 </header>
 
 
@@ -112,7 +135,12 @@
   
 
   <div class="article-layout">
-    <nav class="article-toc" aria-label="Dans cet article" data-toc hidden><p>Dans cet article</p><progress aria-label="Progression dans l’article" max="100" value="0" data-reading-progress></progress><ul></ul></nav>
+    <nav class="article-toc" aria-label="Dans cet article" data-toc hidden>
+      <p class="article-toc-title">Dans cet article</p>
+      <button type="button" class="article-toc-toggle" aria-expanded="false" aria-controls="article-toc-list" data-toc-toggle>Dans cet article</button>
+      <progress aria-label="Progression dans l’article" max="100" value="0" data-reading-progress></progress>
+      <ul id="article-toc-list"></ul>
+    </nav>
     <article class="prose article-body" data-article-body>
       <p>Quelque part dans un laboratoire de l'université du Wisconsin, des chercheurs financés par le Pentagone disséquent le cerveau d'un bruant à gorge blanche. Ce petit oiseau migrateur a une capacité étrange : il peut rester éveillé sept jours d'affilée sans déficit cognitif mesurable. Les militaires américains veulent comprendre comment. À court terme, ils espèrent créer un soldat capable de combattre une semaine sans dormir. À long terme, c'est autre chose qu'ils visent. C'est nous.</p>
 <p>Cette anecdote, documentée par le philosophe Jonathan Crary dans son essai <em>24/7</em>, n'a rien d'une métaphore. Elle dit littéralement ce que le capitalisme fait à la nuit depuis deux siècles. Il la considère comme un problème à résoudre. Un obstacle. Une interruption inacceptable dans la logique de production continue. Et quand on ne peut pas l'éliminer, on peut au moins l'éroder, la fragmenter, la rendre marchande, jusqu'à ce qu'elle ne soit plus tout à fait la nuit.</p>

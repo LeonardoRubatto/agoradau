@@ -3,6 +3,19 @@
   const one = (query, root = document) => root.querySelector(query);
   const all = (query, root = document) => Array.from(root.querySelectorAll(query));
   const reduceMotion = matchMedia("(prefers-reduced-motion: reduce)");
+  const mastheadMenu = one("[data-masthead-menu]");
+  if (mastheadMenu) {
+    mastheadMenu.addEventListener("keydown", (event) => {
+      if (event.key !== "Escape" || !mastheadMenu.open) return;
+      mastheadMenu.open = false;
+      one("summary", mastheadMenu).focus();
+    });
+    document.addEventListener("click", (event) => {
+      if (mastheadMenu.open && (!mastheadMenu.contains(event.target) || event.target.closest("a"))) {
+        mastheadMenu.open = false;
+      }
+    });
+  }
 
   const normalized = (value) => value.toLocaleLowerCase("fr").normalize("NFD").replace(/\p{Diacritic}/gu, "").trim();
 
@@ -164,12 +177,21 @@
     if (headings.length < 2) return;
     const list = one("ul", toc);
     const progress = one("[data-reading-progress]", toc);
+    const toggle = one("[data-toc-toggle]", toc);
+    const setExpanded = (open) => toggle.setAttribute("aria-expanded", String(open));
+    toggle.addEventListener("click", () => setExpanded(toggle.getAttribute("aria-expanded") !== "true"));
+    toc.addEventListener("keydown", (event) => {
+      if (event.key !== "Escape" || toggle.getAttribute("aria-expanded") !== "true" || !toggle.getClientRects().length) return;
+      setExpanded(false);
+      toggle.focus();
+    });
     const links = headings.map((heading, index) => {
       if (!heading.id) heading.id = "partie-" + (index + 1);
       const item = document.createElement("li");
       const a = document.createElement("a");
       a.href = "#" + heading.id;
       a.textContent = heading.textContent.trim();
+      a.addEventListener("click", () => setExpanded(false));
       item.append(a);
       list.append(item);
       return a;
