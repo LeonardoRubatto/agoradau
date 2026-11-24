@@ -11,6 +11,7 @@ const at = (...parts) => join(root, ...parts);
 const read = (file) => readFile(file, "utf8");
 const markdown = new MarkdownIt({ html: true });
 const generated = "<!-- Copie portable générée par npm run build. -->";
+const maxAssetBytes = 25 * 1024 ** 2;
 
 function frontMatter(raw) {
   const text = raw.replace(/^\uFEFF/, "").replace(/\r\n/g, "\n");
@@ -78,7 +79,6 @@ async function checkMedia(value, audio = false) {
   if (!valid.test(value)) throw new Error("Chemin de média invalide : " + value);
   const item = await stat(at(value.slice(1))).catch(() => null);
   if (!item?.isFile() || item.size === 0) throw new Error("Média manquant : " + value);
-  const maxAssetBytes = 25 * 1024 ** 2;
   if (item.size > maxAssetBytes) {
     throw new Error("Ce média dépasse la limite de 25 Mio par fichier sur Cloudflare Pages : " + value);
   }
@@ -127,6 +127,23 @@ async function readData() {
   return data;
 }
 
+async function audioSizeOutput() {
+  const directory = at("media", "audio");
+  const names = (await readdir(directory, { withFileTypes: true }))
+    .filter((entry) => entry.isFile())
+    .map((entry) => entry.name)
+    .sort();
+  const sizes = Object.create(null);
+  for (const name of names) {
+    const { size } = await stat(join(directory, name));
+    if (size > maxAssetBytes) {
+      throw new Error("Ce média dépasse la limite de 25 Mio par fichier sur Cloudflare Pages : /media/audio/" + name);
+    }
+    sizes[name] = size;
+  }
+  return ["_data/audio-sizes.json", JSON.stringify(sizes, null, 2) + "\n"];
+}
+
 async function renderLayout(name, content, scope) {
   if (!name) return content;
   const { data, body } = frontMatter(await read(at("_layouts", name + ".html")));
@@ -159,6 +176,8 @@ for (const page of [...pages, ...analyses, ...actualites]) {
   outputs.push([outputPath(page.url), marked.endsWith("\n") ? marked : marked + "\n"]);
 }
 
+const pageCount = outputs.length;
+outputs.push(await audioSizeOutput());
 const expected = new Set(outputs.map(([file]) => file));
 const staleRoutes = [];
 for (const folder of ["analyses", "actualites"]) {
@@ -182,7 +201,7 @@ if (checkOnly) {
     if (current !== html) stale.push(file);
   }
   if (stale.length) {
-    throw new Error("Pages à régénérer avec npm run build : " + stale.join(", "));
+    throw new Error("Fichiers à régénérer avec npm run build : " + stale.join(", "));
   }
 } else {
   for (const [file, html] of outputs) {
@@ -192,4 +211,4 @@ if (checkOnly) {
   }
   for (const file of staleRoutes) await unlink(at(file));
 }
-console.log(`${outputs.length} pages vérifiées, ${analyses.length} articles, ${actualites.length} actualités, ${podcasts.length} épisode(s).`);
+console.log(`${pageCount} pages vérifiées, ${analyses.length} articles, ${actualites.length} actualités, ${podcasts.length} épisode(s).`);

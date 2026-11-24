@@ -1,3 +1,5 @@
+import audioSizes from "../../../_data/audio-sizes.json" with { type: "json" };
+
 async function copyRange(body, writable, start, end) {
   const reader = body.getReader();
   const writer = writable.getWriter();
@@ -32,7 +34,8 @@ export async function onRequestGet(context) {
   requestHeaders.delete("if-range");
   requestHeaders.set("accept-encoding", "identity");
   const response = await context.next(new Request(request, { headers: requestHeaders }));
-  const total = Number(response.headers.get("content-length"));
+  // The internal asset response can omit Content-Length even when Pages sends it publicly.
+  const total = Number(response.headers.get("content-length") ?? audioSizes[context.params.file]);
   const mediaType = response.headers.get("content-type") || "";
   const encoding = response.headers.get("content-encoding");
   if (response.status !== 200 || !response.body || !Number.isSafeInteger(total) || total < 1 ||
