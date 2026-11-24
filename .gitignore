@@ -1,0 +1,9 @@
+.source/
+.design-memory-cache/
+.claude/settings.local.json
+.codex/hooks.json
+node_modules/
+_site/
+.jekyll-cache/
+.sass-cache/
+qa/

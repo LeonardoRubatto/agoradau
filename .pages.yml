@@ -1,0 +1,292 @@
+# Configuration de l'éditeur Pages CMS (https://pagescms.org)
+# Décrit les formulaires de rédaction (analyses + podcasts). Ne touche pas au site.
+
+media:
+  - name: images
+    label: Images
+    input: media
+    output: /media
+    rename: safe   # nettoie les noms (espaces, virgules, accents) → évite de casser le build
+
+  - name: audio
+    label: Audio (épisodes de podcast)
+    input: media/audio
+    output: /media/audio
+    rename: safe
+    extensions: [mp3, m4a, wav, ogg, oga]
+
+content:
+  - name: analyses
+    label: Analyses
+    type: collection
+    path: _analyses
+    format: yaml-frontmatter
+    filename: '{slug}.md'
+    subfolders: false
+    view:
+      fields: [title, author, date]
+      primary: title
+    fields:
+      - name: title
+        label: Titre
+        type: string
+        required: true
+        description: "Titre court — sert aussi à l'adresse de la page. Ex : Ils ont volé la nuit"
+
+      - name: title_display
+        label: Titre affiché (avec ponctuation)
+        type: string
+        description: "Optionnel. Ex : « Ils ont volé la nuit. » — si vide, le Titre est utilisé."
+
+      - name: dek
+        label: Chapô (phrase d'accroche sous le titre)
+        type: text
+        required: true
+
+      - name: kicker
+        label: Rubriques (petite ligne au-dessus du titre)
+        type: string
+        description: "Ex : Sociologie · Capitalisme · Nuit"
+
+      - name: author
+        label: Auteur·rice
+        type: string
+        required: true
+
+      - name: partner
+        label: Partenaire (collaboration)
+        type: string
+        description: "Optionnel. Ex : A.C.D. Dauphine — affiche « En collaboration avec … » sous le chapô."
+
+      - name: partner_logo
+        label: Logo du partenaire
+        type: image
+        options:
+          media: images
+        description: "Optionnel. Logo carré ou rond, avec l'accord du partenaire."
+
+      - name: date
+        label: Date de publication
+        type: date
+        required: true
+        options:
+          format: yyyy-MM-dd
+          time: false
+
+      - name: date_display
+        label: Date affichée dans la signature
+        type: string
+        description: "Ex : Juin 2026"
+
+      - name: reading_time
+        label: Temps de lecture
+        type: string
+        description: "Ex : ≈ 13 min de lecture"
+
+      - name: cover
+        label: Image de couverture
+        type: image
+        required: true
+        options:
+          media: images
+        description: "Idéalement CARRÉE, ~1080 px. S'affiche au partage du lien et dans le carrousel."
+
+      - name: cover_alt
+        label: Texte alternatif de la couverture
+        type: string
+
+      - name: description
+        label: Description (Google + partage)
+        type: text
+        required: true
+        description: "1 à 2 phrases. C'est le résumé qui s'affiche dans Google et sur les réseaux."
+
+      - name: keywords
+        label: Mots-clés (SEO)
+        type: string
+        list: true
+        description: "Quelques mots-clés du sujet."
+
+      - name: tags_meta
+        label: Tags
+        type: string
+        list: true
+
+      - name: stats
+        label: Chiffres-clés (0 à 3 encadrés)
+        type: object
+        list: true
+        fields:
+          - name: n
+            label: Le chiffre
+            type: string
+            description: "Ex : 6h50, −1h30, ×2"
+          - name: l
+            label: Ce qu'il signifie
+            type: text
+          - name: s
+            label: Source
+            type: string
+
+      - name: body
+        label: L'article
+        type: rich-text
+        required: true
+        description: "Écris normalement. Un titre de partie = « Titre 2 » (numéroté I, II, III… automatiquement). Une phrase-choc = « Citation »."
+
+      - name: closing
+        label: Phrase de clôture — ligne 1
+        type: string
+        description: "Optionnel. La phrase finale en gros."
+
+      - name: closing_red
+        label: Phrase de clôture — ligne 2 (en rouge)
+        type: string
+
+      - name: sources
+        label: Sources & références
+        type: rich-text
+        description: "Optionnel. Sous-titres en « Titre 3 » + listes à puces. S'affiche dans un bloc dépliable."
+
+      - name: seo_title
+        label: Titre pour Google (avancé)
+        type: string
+        description: "Optionnel. Si vide : « Titre | Agora Dau »."
+
+  - name: podcasts
+    label: Podcasts
+    type: collection
+    path: _podcasts
+    format: yaml-frontmatter
+    filename: '{slug}.md'
+    subfolders: false
+    view:
+      fields: [title, episode, date]
+      primary: title
+    fields:
+      - name: title
+        label: Titre de l'épisode
+        type: string
+        required: true
+
+      - name: episode
+        label: Numéro d'épisode
+        type: number
+        required: true
+        description: "Ex : 1, 2, 3… S'affiche comme « EP. 01 »."
+
+      - name: dek
+        label: Accroche (une phrase)
+        type: text
+        required: true
+        description: "La phrase qui donne envie d'écouter."
+
+      - name: date
+        label: Date de publication
+        type: date
+        required: true
+        options:
+          format: yyyy-MM-dd
+          time: false
+
+      - name: duration
+        label: Durée
+        type: string
+        description: "Ex : 42 min"
+
+      - name: guests
+        label: Invité·e·s / voix
+        type: string
+        description: "Ex : Lissa Perrin & Rafael Gomes-Nascimento"
+
+      - name: cover
+        label: Image de l'épisode
+        type: image
+        options:
+          media: images
+        description: "Carrée, ~1080 px. Si vide, le logo Agora Dau est utilisé."
+
+      - name: audio
+        label: Fichier audio (MP3)
+        type: file
+        options:
+          media: audio
+        description: "Le fichier de l'épisode. Nécessaire pour la lecture directe dans l'app."
+
+      - name: spotify
+        label: Lien Spotify
+        type: string
+        description: "Optionnel. L'URL de l'épisode sur Spotify."
+
+      - name: apple
+        label: Lien Apple Podcasts
+        type: string
+        description: "Optionnel."
+
+      - name: youtube
+        label: Lien YouTube
+        type: string
+        description: "Optionnel."
+
+      - name: tags_meta
+        label: Tags
+        type: string
+        list: true
+
+      - name: body
+        label: Notes d'épisode
+        type: rich-text
+        description: "Optionnel. Résumé, chapitres, références citées."
+
+      - name: transcript
+        label: Transcription de l’épisode
+        type: rich-text
+
+      - name: excerpts
+        label: Extraits
+        type: object
+        list: true
+        fields:
+          - name: title
+            label: Titre de l’extrait
+            type: string
+            required: true
+          - name: audio
+            label: Fichier audio
+            type: file
+            required: true
+            options:
+              media: audio
+          - name: duration
+            label: Durée
+            type: string
+          - name: transcript
+            label: Transcription de l’extrait
+            type: rich-text
+
+  - name: actualites
+    label: Actualités
+    type: collection
+    path: _actualites
+    format: yaml-frontmatter
+    filename: '{slug}.md'
+    subfolders: false
+    view:
+      fields: [title, date]
+      primary: title
+    fields:
+      - {name: title, label: Titre, type: string, required: true}
+      - {name: dek, label: Chapô, type: text, required: true}
+      - {name: author, label: Auteur·rice, type: string, required: true}
+      - name: date
+        label: Date de publication
+        type: date
+        required: true
+        options: {format: yyyy-MM-dd, time: false}
+      - {name: description, label: Description pour le partage, type: text}
+      - name: cover
+        label: Image de couverture
+        type: image
+        options: {media: images}
+      - {name: cover_alt, label: Texte alternatif de la couverture, type: string}
+      - {name: body, label: Texte de l’actualité, type: rich-text, required: true}
