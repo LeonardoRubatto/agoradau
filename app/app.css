@@ -174,8 +174,10 @@ body.deep main { padding-top:3.4rem; }
 .check { display:flex; align-items:start; gap:.65rem; border-top:1px solid var(--hair); padding:.7rem 0; margin-top:1rem; }
 .check input { min-height:1rem; width:1.1rem; height:1.1rem; margin:.28rem 0 0; accent-color:var(--red-text); }
 .submit { margin-top:.5rem; }
-.app-footer { display:flex; justify-content:center; align-items:center; gap:1rem; padding:0 1rem calc(var(--tab) + var(--sab) + 3.8rem); font-size:.9rem; }
-.app-footer a { display:flex; align-items:center; min-height:44px; }
+.app-footer { text-align:center; padding-bottom:calc(var(--tab) + var(--sab) + 3.8rem); font-size:.9rem; }
+.app-footer a { display:inline-flex; align-items:center; min-height:44px; }
+.app-footer .footer-credit { margin-top:.625rem; background:var(--ink); color:#fff; }
+.app-footer .footer-credit-link:focus-visible { outline-color:#fff; }
 @media(max-width:600px) {
   main { width:calc(100% - 2rem); }
   .feat { grid-template-columns:1fr; }

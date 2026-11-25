@@ -48,6 +48,7 @@ root: "../"
 <meta name="twitter:description" content="Les analyses et le podcast d’Agora Dau dans l’application.">
 <meta name="twitter:image" content="https://agoradau.fr/og-image.png">
 <link rel="stylesheet" href="./app.css?v=6"/>
+<link rel="stylesheet" href="../assets/css/footer-credit.css">
 <script>
   (function(){try{
     var p=JSON.parse(localStorage.getItem('agora.theme')||'"system"');
@@ -148,7 +149,10 @@ root: "../"
   </a>
 </nav>
 
-<footer class="app-footer"><a href="../mentions-legales/index.html">Mentions légales</a><a href="https://telaventis.fr/">Site par Telaventis</a></footer>
+<footer class="app-footer">
+  <a href="../mentions-legales/index.html">Mentions légales</a>
+  {% include footer-credit.html %}
+</footer>
 
 <div class="toast" id="toast"></div>
 

@@ -21,11 +21,11 @@ body_class: home
       </div>
       <div class="stage-media">
         <div class="stage-oval">
-          <figure class="stage-shot stage-shot--radio" data-stage-scene="ecouter">
-            {% include picture.html path="/assets/photos/soiree-bleue.jpg" alt="Trois membres d’Agora Dau sous les néons bleus d’une soirée" sizes="(max-width: 760px) 100vw, (max-width: 1200px) 56vw, 730px" eager=true %}
+          <figure class="stage-shot stage-shot--journal" data-stage-scene="lire">
+            {% include picture.html path="/analyse-nuit-filature-wright.jpg" alt="Un nuage éclairé par la lune au-dessus d’une filature, dans une peinture de Joseph Wright of Derby" sizes="(max-width: 760px) 100vw, 730px" eager=true %}
           </figure>
-          <figure class="stage-shot stage-shot--journal" data-stage-scene="lire" hidden>
-            {% include picture.html path="/analyse-nuit-filature-wright.jpg" alt="Un nuage éclairé par la lune au-dessus d’une filature, dans une peinture de Joseph Wright of Derby" sizes="(max-width: 760px) 100vw, 730px" %}
+          <figure class="stage-shot stage-shot--radio" data-stage-scene="ecouter" hidden>
+            {% include picture.html path="/assets/photos/soiree-bleue.jpg" alt="Trois membres d’Agora Dau sous les néons bleus d’une soirée" sizes="(max-width: 760px) 100vw, (max-width: 1200px) 56vw, 730px" %}
           </figure>
           <figure class="stage-shot stage-shot--asso" data-stage-scene="participer" hidden>
             {% include picture.html path="/assets/photos/sans-culottes.jpg" alt="Des membres d’Agora Dau devant la devanture du bar Les Sans-Culottes" sizes="(max-width: 760px) 100vw, 730px" %}
@@ -34,7 +34,7 @@ body_class: home
         <div class="stage-orbit" aria-hidden="true"></div>
       </div>
       <div class="stage-caption">
-        <p data-stage-caption>Agora Dau en soirée</p>
+        <p data-stage-caption>Dans le journal · Ils ont volé la nuit</p>
         <button type="button" data-stage-rotation hidden aria-label="Mettre les images en pause"><i aria-hidden="true"></i></button>
       </div>
     </div>
@@ -44,11 +44,11 @@ body_class: home
       </nav>
       <div class="wrap stage-controls" data-stage-controls hidden>
         <div class="stage-keys" role="group" aria-label="Aperçus du média">
-          <button type="button" data-stage-key="lire" aria-pressed="false" data-caption="Dans le journal · Ils ont volé la nuit" data-href="journal/index.html" data-link="Ouvrir le journal">Le tableau</button>
-          <button type="button" data-stage-key="ecouter" aria-pressed="true" data-caption="Agora Dau en soirée" data-href="{% if episode %}#podcast{% else %}ecouter/index.html{% endif %}" data-link="Écouter l’épisode">À l’écoute</button>
+          <button type="button" data-stage-key="lire" aria-pressed="true" data-caption="Dans le journal · Ils ont volé la nuit" data-href="journal/index.html" data-link="Ouvrir le journal">Le tableau</button>
+          <button type="button" data-stage-key="ecouter" aria-pressed="false" data-caption="Agora Dau en soirée" data-href="{% if episode %}#podcast{% else %}ecouter/index.html{% endif %}" data-link="Écouter l’épisode">À l’écoute</button>
           <button type="button" data-stage-key="participer" aria-pressed="false" data-caption="L’équipe devant Les Sans-Culottes" data-href="association/index.html#rejoindre" data-link="Rejoindre l’asso">L’équipe</button>
         </div>
-        <a class="stage-action" data-stage-action href="{% if episode %}#podcast{% else %}ecouter/index.html{% endif %}"><span data-stage-action-text>Écouter l’épisode</span></a>
+        <a class="stage-action" data-stage-action href="journal/index.html"><span data-stage-action-text>Ouvrir le journal</span></a>
       </div>
     </div>
   </section>

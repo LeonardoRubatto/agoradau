@@ -40,6 +40,7 @@
   
   <link rel="stylesheet" href="./assets/css/site.css">
   <link rel="stylesheet" href="./assets/css/editions.css">
+  <link rel="stylesheet" href="./assets/css/footer-credit.css">
   <script src="./assets/js/site.js" defer></script>
   
   <link rel="stylesheet" href="./assets/css/home.css">
@@ -100,26 +101,26 @@
       </div>
       <div class="stage-media">
         <div class="stage-oval">
-          <figure class="stage-shot stage-shot--radio" data-stage-scene="ecouter">
-            
-
-
-
-<picture class="">
-  <source type="image/avif" sizes="(max-width: 760px) 100vw, (max-width: 1200px) 56vw, 730px" srcset="./assets/photos/soiree-bleue-480.avif 480w, ./assets/photos/soiree-bleue-800.avif 800w, ./assets/photos/soiree-bleue-1166.avif 1166w">
-  <img src="./assets/photos/soiree-bleue-800.webp" srcset="./assets/photos/soiree-bleue-480.webp 480w, ./assets/photos/soiree-bleue-800.webp 800w, ./assets/photos/soiree-bleue-1166.webp 1166w" sizes="(max-width: 760px) 100vw, (max-width: 1200px) 56vw, 730px" width="1166" height="874" alt="Trois membres d’Agora Dau sous les néons bleus d’une soirée" fetchpriority="high">
-</picture>
-
-
-          </figure>
-          <figure class="stage-shot stage-shot--journal" data-stage-scene="lire" hidden>
+          <figure class="stage-shot stage-shot--journal" data-stage-scene="lire">
             
 
 
 
 <picture class="">
   <source type="image/avif" sizes="(max-width: 760px) 100vw, 730px" srcset="./assets/covers/analyse-nuit-filature-wright-400.avif 400w, ./assets/covers/analyse-nuit-filature-wright-760.avif 760w, ./assets/covers/analyse-nuit-filature-wright-763.avif 763w">
-  <img src="./assets/covers/analyse-nuit-filature-wright-760.webp" srcset="./assets/covers/analyse-nuit-filature-wright-400.webp 400w, ./assets/covers/analyse-nuit-filature-wright-760.webp 760w, ./assets/covers/analyse-nuit-filature-wright-763.webp 763w" sizes="(max-width: 760px) 100vw, 730px" width="763" height="614" alt="Un nuage éclairé par la lune au-dessus d’une filature, dans une peinture de Joseph Wright of Derby" loading="lazy" decoding="async">
+  <img src="./assets/covers/analyse-nuit-filature-wright-760.webp" srcset="./assets/covers/analyse-nuit-filature-wright-400.webp 400w, ./assets/covers/analyse-nuit-filature-wright-760.webp 760w, ./assets/covers/analyse-nuit-filature-wright-763.webp 763w" sizes="(max-width: 760px) 100vw, 730px" width="763" height="614" alt="Un nuage éclairé par la lune au-dessus d’une filature, dans une peinture de Joseph Wright of Derby" fetchpriority="high">
+</picture>
+
+
+          </figure>
+          <figure class="stage-shot stage-shot--radio" data-stage-scene="ecouter" hidden>
+            
+
+
+
+<picture class="">
+  <source type="image/avif" sizes="(max-width: 760px) 100vw, (max-width: 1200px) 56vw, 730px" srcset="./assets/photos/soiree-bleue-480.avif 480w, ./assets/photos/soiree-bleue-800.avif 800w, ./assets/photos/soiree-bleue-1166.avif 1166w">
+  <img src="./assets/photos/soiree-bleue-800.webp" srcset="./assets/photos/soiree-bleue-480.webp 480w, ./assets/photos/soiree-bleue-800.webp 800w, ./assets/photos/soiree-bleue-1166.webp 1166w" sizes="(max-width: 760px) 100vw, (max-width: 1200px) 56vw, 730px" width="1166" height="874" alt="Trois membres d’Agora Dau sous les néons bleus d’une soirée" loading="lazy" decoding="async">
 </picture>
 
 
@@ -140,7 +141,7 @@
         <div class="stage-orbit" aria-hidden="true"></div>
       </div>
       <div class="stage-caption">
-        <p data-stage-caption>Agora Dau en soirée</p>
+        <p data-stage-caption>Dans le journal · Ils ont volé la nuit</p>
         <button type="button" data-stage-rotation hidden aria-label="Mettre les images en pause"><i aria-hidden="true"></i></button>
       </div>
     </div>
@@ -150,11 +151,11 @@
       </nav>
       <div class="wrap stage-controls" data-stage-controls hidden>
         <div class="stage-keys" role="group" aria-label="Aperçus du média">
-          <button type="button" data-stage-key="lire" aria-pressed="false" data-caption="Dans le journal · Ils ont volé la nuit" data-href="journal/index.html" data-link="Ouvrir le journal">Le tableau</button>
-          <button type="button" data-stage-key="ecouter" aria-pressed="true" data-caption="Agora Dau en soirée" data-href="#podcast" data-link="Écouter l’épisode">À l’écoute</button>
+          <button type="button" data-stage-key="lire" aria-pressed="true" data-caption="Dans le journal · Ils ont volé la nuit" data-href="journal/index.html" data-link="Ouvrir le journal">Le tableau</button>
+          <button type="button" data-stage-key="ecouter" aria-pressed="false" data-caption="Agora Dau en soirée" data-href="#podcast" data-link="Écouter l’épisode">À l’écoute</button>
           <button type="button" data-stage-key="participer" aria-pressed="false" data-caption="L’équipe devant Les Sans-Culottes" data-href="association/index.html#rejoindre" data-link="Rejoindre l’asso">L’équipe</button>
         </div>
-        <a class="stage-action" data-stage-action href="#podcast"><span data-stage-action-text>Écouter l’épisode</span></a>
+        <a class="stage-action" data-stage-action href="journal/index.html"><span data-stage-action-text>Ouvrir le journal</span></a>
       </div>
     </div>
   </section>
@@ -435,8 +436,12 @@
     </div>
     <div class="footer-bottom">
       <small>© Agora Dau · RNA W913016495</small>
-      <small><a href="./mentions-legales/index.html">Mentions légales</a><a href="https://telaventis.fr/">Site par Telaventis</a></small>
+      <small><a href="./mentions-legales/index.html">Mentions légales</a></small>
     </div>
+    <div class="footer-credit">
+  <a href="https://telaventis.fr/" target="_blank" rel="noopener" class="footer-credit-link">Site by Telaventis</a>
+</div>
+
   </div>
 </footer>
 

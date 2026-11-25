@@ -10,11 +10,11 @@ Examined: captures du premier dessin aux deux tailles, trois essais typographiqu
 Chosen: A — un vrai enregistrement, un micro et la forme du logo permettent de comprendre le média immédiatement. Les trois accès répondent à des intentions distinctes.
 
 ## Concept
-L’ovale du logo Agora ouvre sur une photo d’Agora Dau en soirée. Sur téléphone, la prise de vue déborde jusqu’aux bords de l’écran et le hero occupe la hauteur disponible. Trois commandes changent le plan. Un lien souligné donne accès à la rubrique correspondante.
+L’ovale du logo Agora ouvre sur la peinture nocturne qui illustre « Ils ont volé la nuit ». Sur téléphone, le tableau déborde jusqu’aux bords de l’écran et le hero occupe la hauteur disponible. Trois commandes changent le plan. Un lien souligné donne accès à la rubrique correspondante.
 Swap test: il faudrait remplacer ensemble la forme héritée du logo, la prise de vue, le son réel du premier épisode et les documents de la rédaction.
 
 ## Signature
-Dans le premier écran, le titre « À vous la parole » recouvre une partie de l’image du studio. Les touches au bord du cadre font apparaître l’affiche, le studio ou le bureau dans la même ouverture.
+Dans le premier écran, le titre « À vous la parole » recouvre une partie du tableau. Les touches au bord du cadre font apparaître le tableau, la photo de soirée ou l’équipe dans la même ouverture.
 
 ## Not this
 La première version alignait un slogan et une photo à deux colonnes. Pas de triptyque de cartes, de numbered-index décoratif ni de révélation de chaque titre. Crème conservé pour le journal par fidélité à l’identité.

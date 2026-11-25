@@ -1,0 +1,18 @@
+@font-face {
+  font-family: "Archivo";
+  src: url("../fonts/archivo-800-latin.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+}
+
+.footer-credit-link {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  color: #fff;
+  font: 800 .9375rem/1.25 "Archivo", var(--body);
+  text-decoration: none;
+}
+
+.footer-credit-link:is(:hover, :focus-visible) { text-decoration: underline; }

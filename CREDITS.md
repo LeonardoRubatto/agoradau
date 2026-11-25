@@ -8,4 +8,4 @@
 - "Sticky Sections" by Codrops, MIT. https://tympanus.net/Development/StickySections/
 - "Scroll Index" by Kokonut UI (kokonut-labs/kokonutui), MIT. https://kokonutui.com/r/scroll-index.json. Auteur du composant : @dorianbaffier.
 - Fragments `gallery-right-image`, `section-transitions` et `text-over-image` de Design Memory. Mécanismes adaptés au site, photographies du dossier Agora Dau.
-- Archivo Black, Barlow Condensed et Source Sans 3. Licences SIL Open Font License dans `assets/fonts/`.
+- Archivo Black, Barlow Condensed et Source Sans 3. Le crédit Telaventis utilise une version optimisée d’Archivo 800, issue du fichier de police du site Telaventis. Licences SIL Open Font License dans `assets/fonts/`.

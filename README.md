@@ -6,7 +6,7 @@ Le site du média étudiant Agora Dau. Pour voir la refonte, ouvre `index.html` 
 
 - **Pages CMS** reprend les champs existants et ajoute la collection Actualités, les extraits et les transcriptions.
 - **Depuis le dépôt** modifie le Markdown dans `_analyses/`, `_actualites/` ou `_podcasts/`. Les médias audio vont dans `media/audio/`. Le guide décrit tous les champs.
-- **Pour Claude ou un autre assistant** donne-lui un accès au dépôt selon les rôles du bureau et indique-lui de lire `AI-INSTRUCTIONS.md`. Fournis les textes et les médias prêts à publier.
+- **Avec un assistant IA** donne-lui accès au dépôt selon les rôles du bureau. `AGENTS.md` renvoie au guide commun `AI-INSTRUCTIONS.md`. Si ton outil ne charge pas les consignes du dépôt, joins-lui ce guide ou indique-lui de le lire avant la mise à jour. Il regroupe les questions sur les éléments manquants et intègre les textes et médias validés par la rédaction.
 
 ## Copier le site pour le consulter hors ligne
 

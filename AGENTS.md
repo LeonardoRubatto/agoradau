@@ -1,3 +1,7 @@
+## Publications Agora Dau
+
+Pour toute demande d’ajout, de correction ou de publication de contenu, lis `AI-INSTRUCTIONS.md` et suis la liste des éléments à recueillir pour la demande en cours. Ce mode d’emploi s’applique à tout assistant qui travaille sur le dépôt.
+
 <!-- design-memory:begin -->
 ## Design Memory
 
